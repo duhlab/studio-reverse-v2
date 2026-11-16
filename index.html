@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Reverse · Estética Automotiva na Vila Formosa</title>
+<meta name="description" content="Estética automotiva na Vila Formosa, SP: lavagem detalhada, higienização, polimento, micropintura e restauração de carros de leilão. Nota 5,0 no Google.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Studio Reverse · Estética Automotiva na Vila Formosa">
+<meta property="og:description" content="Excelência em cada detalhe. Lavagem detalhada, polimento, micropintura e restauração de carros de leilão. Nota 5,0 no Google.">
+<meta property="og:image" content="https://studio-reverse.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-latin-wdth-normal.woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero.webp">
+<style>
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(fonts/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Jost";src:url(fonts/jost-latin-300-normal.woff2) format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Jost";src:url(fonts/jost-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Jost";src:url(fonts/jost-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{
+  --ink:#0a0a0b; --ink-2:#111113; --ink-3:#18181b; --ink-4:#202024;
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+  --white:#f4f4f5; --silver:#c9cbcf; --mist:#9a9ca3;
+  --red:#ffcc02; --red-hi:#ffd21f; --red-lo:#fea410; --grad:linear-gradient(100deg,#ffd21f 0%,#ffcc02 35%,#fea410 100%); --gray:#9a9b9d;
+  --wa:#25d366; --wa-2:#128c4b;
+  --display:"Archivo",system-ui,sans-serif; --body:"Jost",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --r:14px; --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{overflow-x:clip;background:var(--ink);color:var(--white);font:300 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;caret-color:var(--red-hi)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--red);color:#111}
+:focus-visible{outline:2px solid var(--red-hi);outline-offset:3px;border-radius:6px}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:#2a2a2f;border-radius:10px;border:2px solid var(--ink)}::-webkit-scrollbar-thumb:hover{background:var(--red-lo)}
+html{scrollbar-color:#2a2a2f var(--ink)}
+.num{font-variant-numeric:tabular-nums}
+.wrap{width:min(1240px,100%);margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-family:var(--display);font-stretch:116%;font-weight:600;letter-spacing:-.02em;line-height:1.06;text-wrap:balance}
+h1{font-size:clamp(1.7rem,3vw,2.65rem);font-weight:580;line-height:1.12;font-stretch:106%}
+.hero h1 > span{text-wrap:balance}
+h2{font-size:clamp(1.85rem,3.6vw,2.6rem)}
+h3{font-size:1.18rem;line-height:1.2;letter-spacing:-.01em}
+p{text-wrap:pretty}
+.lead{color:var(--silver);font-size:clamp(1.02rem,1.4vw,1.15rem);max-width:56ch}
+.muted{color:var(--mist)}
+.red{color:var(--red-hi)}
+section{position:relative}
+.sec{padding:clamp(64px,8vw,112px) 0}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,60px);max-width:760px}
+.tap{display:inline-flex;align-items:center;gap:12px;color:var(--silver);font-size:16px}
+.tap svg{width:30px;height:30px;color:var(--red);flex:none;animation:tapit 2.2s var(--ease) infinite;transform-origin:50% 80%}
+@keyframes tapit{0%,60%,100%{transform:translateY(0) scale(1)}70%{transform:translateY(3px) scale(.92)}80%{transform:translateY(0) scale(1)}}
+
+/* ---------- buttons ---------- */
+.btn{--h:54px;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:var(--h);padding:0 26px;border-radius:999px;font:500 15.5px/1 var(--body);letter-spacing:.01em;text-decoration:none;overflow:hidden;isolation:isolate;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background-color .3s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:translateY(1px) scale(.98)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-red{background:var(--grad);color:#121212;font-weight:500;box-shadow:0 10px 28px -10px rgba(254,164,16,.6),inset 0 1px 0 rgba(255,255,255,.22)}
+.btn-red::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.38) 48%,transparent 62%);transform:translateX(-120%);transition:transform .9s var(--ease);z-index:-1}
+.btn-red:hover::after{transform:translateX(120%)}
+.btn-red:hover{box-shadow:0 16px 36px -12px rgba(254,164,16,.75),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-ghost{background:rgba(255,255,255,.03);color:var(--white);border:1px solid transparent;background-clip:padding-box}
+.btn-ghost::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:conic-gradient(from var(--a,0deg),var(--line-2),rgba(255,255,255,.55),var(--red-hi),var(--line-2) 60%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;z-index:-1}
+.btn-ghost:hover{background:rgba(255,255,255,.08);animation:spin-b 2.4s linear infinite}
+.btn-ghost:hover svg{transform:rotate(-12deg)}
+.btn-ghost svg{transition:transform .4s var(--ease)}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spin-b{to{--a:360deg}}
+.btn-sm{--h:44px;padding:0 18px;font-size:14.5px}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background-color .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(10,10,11,.82);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.logo{display:block;width:196px}
+.nav-links{display:flex;gap:30px;font-size:15px;color:var(--silver)}
+.nav-links a{text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:#fff}
+@media (max-width:900px){.nav-links{display:none}.logo{width:158px}}
+
+/* ---------- hero ---------- */
+.hero{padding:118px 0 clamp(60px,8vw,110px);overflow:hidden}
+.ceiling{position:absolute;left:0;right:0;top:-46px;height:20px;pointer-events:none}
+.ceiling i{position:absolute;top:8px;height:2px;border-radius:2px;background:#f6f7fb;box-shadow:0 0 6px 1px rgba(255,255,255,.75),0 0 22px 4px rgba(210,225,255,.25);opacity:.08}
+.ceiling.on i{animation:tube 1.1s steps(1,end) forwards;animation-delay:var(--d)}
+@keyframes tube{0%{opacity:.08}12%{opacity:.9}18%{opacity:.15}30%{opacity:1}36%{opacity:.35}48%,100%{opacity:.88}}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.18fr);gap:clamp(30px,5vw,70px);align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;padding:8px 15px 8px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:14px;color:var(--silver);margin-bottom:26px}
+.dot{position:relative;width:9px;height:9px;border-radius:50%;background:var(--mist);flex:none}
+.dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:ping 1.8s var(--ease) infinite}
+.is-open .dot{background:#3ddc84}.is-closed .dot{background:var(--red-lo)}
+.is-open b{color:#7ff0ad}.is-closed b{color:#ffc266}
+.status b{font-weight:500}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(3);opacity:0}}
+.hero h1{display:grid;gap:.06em}.hero h1 .r,.gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding:.04em .1em .1em;margin:0 -.1em}
+.hero .lead{margin-top:22px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.proofs{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:42px;padding-top:26px;border-top:1px solid var(--line);font-size:14.5px;color:var(--silver)}
+.proofs span{display:flex;align-items:center;gap:9px}
+.proofs svg{width:17px;height:17px;color:var(--red-hi);flex:none}
+.stars{color:#f5b400;letter-spacing:1px}
+.shot{position:relative;margin-right:calc(var(--pad)*-1)}
+.shot-frame{position:relative;border-radius:22px 0 0 22px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px var(--line)}
+.shot-frame img{width:100%}
+.shot-frame::after{content:"";position:absolute;inset:-20% -60%;background:linear-gradient(100deg,transparent 42%,rgba(255,255,255,.22) 50%,transparent 58%);transform:translateX(-70%);pointer-events:none;mix-blend-mode:overlay}
+.shot-frame.sweep::after{animation:sweep 2.6s var(--ease) forwards}
+@keyframes sweep{to{transform:translateX(70%)}}
+.float{position:absolute;background:rgba(14,14,16,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line-2);border-radius:16px;box-shadow:0 18px 40px -16px rgba(0,0,0,.8);animation:bob 6s ease-in-out infinite}
+.f-rating{left:-28px;bottom:26px;padding:14px 18px;display:flex;align-items:center;gap:14px}
+.f-rating .g{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
+.f-rating strong{font:600 1.5rem/1 var(--display);font-stretch:112%}
+.f-rating small{display:block;font-size:12.5px;color:var(--mist);margin-top:3px}
+.f-ba{right:calc(var(--pad) + 18px);bottom:-30px;padding:8px;display:flex;gap:10px;align-items:center;animation-delay:-3s}
+.f-ba img{width:68px;border-radius:10px}
+.f-ba span{font-size:12.5px;line-height:1.3;color:var(--silver);padding-right:8px}
+.f-ba b{display:block;color:#fff;font-weight:500}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (max-width:900px){
+  .hero{padding-top:98px}
+  .hero-grid{grid-template-columns:1fr}
+  .shot{margin:56px calc(var(--pad)*-1) 0}
+  .shot-frame{border-radius:0}
+  .f-rating{left:var(--pad);bottom:-24px}
+  .f-ba{display:none!important}
+  .proofs{gap:10px 20px}
+}
+
+/* ---------- reveal ---------- */
+.rv{transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
+.js .rv:not(.in){opacity:.001;transform:translateY(26px);filter:blur(6px)}
+.fade{opacity:0;transition:opacity .7s ease}.fade.ok{opacity:1}
+
+/* ---------- services ---------- */
+.svc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.svc-list{list-style:none;border-top:1px solid var(--line)}
+.svc-item{border-bottom:1px solid var(--line)}
+.svc-btn{width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;padding:20px 4px;text-align:left;transition:padding .45s var(--ease),color .3s}
+.svc-btn .t{font:600 clamp(1.08rem,1.6vw,1.28rem)/1.2 var(--display);font-stretch:112%;letter-spacing:-.01em;color:var(--silver);transition:color .3s}
+.svc-btn .s{display:block;font:300 14.5px/1.45 var(--body);color:var(--mist);margin-top:5px;letter-spacing:0}
+.svc-btn .ar{width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:all .4s var(--ease)}
+.svc-btn .ar svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.svc-btn:hover .t{color:#fff}
+.svc-item.on .svc-btn{padding-left:16px}
+.svc-item.on .t{color:#fff}
+.svc-item.on .ar{background:var(--grad);border-color:var(--red);color:#111}
+.svc-item.on .ar svg{transform:rotate(-45deg)}
+.svc-btn{position:relative}
+.svc-btn::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:2px;background:var(--red-hi);border-radius:2px;transform:scaleY(0);transition:transform .45s var(--ease)}
+.svc-item.on .svc-btn::before{transform:scaleY(1)}
+.svc-panel{position:sticky;top:96px;background:var(--ink-2);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.svc-panel .ph{position:relative;background:#050506;display:flex;justify-content:center}
+.svc-panel .ph img{width:auto;max-width:100%;max-height:min(44vh,420px)}
+@media (max-width:900px){.svc-panel .ph img{max-height:none;width:100%}}
+.svc-panel .bd{padding:clamp(22px,3vw,34px)}
+.svc-panel h3{font-size:1.5rem}
+.svc-panel p{color:var(--silver);margin-top:12px;font-size:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags span{font-size:13.5px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--silver)}
+.price{display:flex;gap:18px;margin-top:18px;font-size:14.5px;color:var(--mist)}
+.price b{display:block;font:600 1.35rem/1.1 var(--display);font-stretch:112%;color:#fff}
+.svc-panel .btn{margin-top:24px}
+.row2{display:flex;flex-wrap:wrap;gap:10px}
+.swap{animation:swap .55s var(--ease)}
+@keyframes swap{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (max-width:900px){
+  .svc{grid-template-columns:1fr}
+  .svc-panel{position:relative;top:0;margin:4px 0 18px;border-radius:18px}
+  .svc-aside{display:none}
+}
+
+
+/* ---------- leilão (seção mais chamativa) ---------- */
+.leilao{position:relative;background:#ffd400;color:#0b0b0c;overflow:hidden;isolation:isolate;padding:0}
+.leilao::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 85% 10%,#fff27a 0%,transparent 55%),radial-gradient(80% 90% at 0% 100%,#ff9f0a 0%,transparent 60%);z-index:-1}
+.haz{height:22px;background:repeating-linear-gradient(-45deg,#0b0b0c 0 18px,#ffd400 18px 36px);background-size:51px 51px;animation:haz 1.6s linear infinite}
+.haz-b{animation-direction:reverse}
+@keyframes haz{to{background-position:51px 0}}
+.lei-bg{position:absolute;left:-2vw;bottom:-4vw;font:900 clamp(7rem,24vw,22rem)/.8 var(--display);font-stretch:125%;letter-spacing:-.04em;color:rgba(0,0,0,.07);z-index:-1;white-space:nowrap;pointer-events:none;transform:translateX(var(--lx,0))}
+.lei-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(30px,5vw,70px);align-items:center;padding-top:clamp(70px,9vw,120px);padding-bottom:clamp(70px,9vw,120px)}
+.lei-badge{display:inline-flex;align-items:center;gap:10px;padding:9px 16px 9px 12px;border-radius:999px;background:#0b0b0c;color:#ffd400;font:500 14px var(--body);letter-spacing:.02em}
+.lei-badge svg{width:18px;height:18px}
+.leilao h2{margin-top:22px;font-size:clamp(2rem,3.9vw,3.3rem);line-height:1.04;font-weight:800;font-stretch:118%;line-height:1;letter-spacing:-.03em;color:#0b0b0c}
+.leilao h2 em{font-style:normal;background:#0b0b0c;color:#ffd400;padding:0 .18em;border-radius:.12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lei-copy > p{margin-top:22px;font-size:clamp(1.02rem,1.4vw,1.15rem);font-weight:400;max-width:56ch;color:#1d1b12}
+.lei-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin-top:28px}
+.lei-list li{display:flex;gap:10px;font-weight:400;font-size:15.5px;line-height:1.4}
+.lei-list svg{width:20px;height:20px;flex:none;margin-top:1px;background:#0b0b0c;color:#ffd400;border-radius:6px;padding:3px}
+.lei-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:34px}
+.lei-cta span{font-size:14.5px;max-width:34ch;color:#2b2716;font-weight:400}
+.btn-black{--h:60px;padding:0 30px;background:#0b0b0c;color:#ffd400;font-size:16.5px;font-weight:500;box-shadow:0 18px 34px -16px rgba(0,0,0,.65)}
+.btn-black::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,212,0,.35) 48%,transparent 62%);transform:translateX(-120%);animation:shine 3.2s var(--ease) infinite;z-index:-1}
+@keyframes shine{0%,55%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.btn-black:hover{transform:translateY(-2px);box-shadow:0 24px 40px -16px rgba(0,0,0,.75)}
+.lei-photo{position:relative;transform:rotate(2deg);background:#0b0b0c;padding:12px 12px 0;border-radius:18px;box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
+.lei-photo img{border-radius:10px;width:100%}
+.lei-photo figcaption{color:#ffd400;font-size:13.5px;padding:12px 4px 14px;letter-spacing:.02em}
+.lei-steps{list-style:none;margin-top:26px;display:grid;gap:10px}
+.lei-steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:14px 16px;background:rgba(11,11,12,.92);color:#e9e9ea;border-radius:14px;font-size:14.5px}
+.lei-steps b{width:44px;height:44px;border-radius:12px;background:#ffd400;color:#0b0b0c;display:grid;place-items:center;font:800 1.25rem var(--display)}
+.lei-steps strong{display:block;color:#fff;font-weight:500;font-size:15.5px}
+.leilao .rv:not(.in){filter:none}
+@media (max-width:900px){.lei-grid{grid-template-columns:1fr}.lei-list{grid-template-columns:1fr}.lei-photo{transform:rotate(1deg)}}
+
+/* ---------- before / after ---------- */
+.ba-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,5vw,70px);align-items:center}
+.ba-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.chip{padding:10px 16px;border-radius:999px;border:1px solid var(--line-2);font-size:14.5px;color:var(--silver);background:rgba(255,255,255,.02);transition:all .3s var(--ease)}
+.chip:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.chip[aria-pressed=true]{background:var(--white);border-color:var(--white);color:var(--ink);font-weight:400}
+.ba-note{margin-top:22px;color:var(--mist);font-size:15px;min-height:3.2em}
+.ba{position:relative;margin:0 auto;border-radius:20px;overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:ew-resize;background:#000;box-shadow:0 40px 70px -30px rgba(0,0,0,.9),0 0 0 1px var(--line);max-width:100%;transition:aspect-ratio .5s var(--ease)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.ba .after{clip-path:inset(0 0 0 var(--x,50%))}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 18px 2px rgba(255,255,255,.55)}
+.ba .knob{position:absolute;top:50%;left:var(--x,50%);width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:rgba(10,10,11,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid #fff;display:grid;place-items:center}
+.ba .knob svg{width:24px;height:24px}
+.ba .lbl{position:absolute;top:14px;font:500 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:8px 11px;border-radius:999px;background:rgba(10,10,11,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ba .l1{left:14px}.ba .l2{right:14px;background:var(--grad);color:#111}
+.ba-stage{display:flex;justify-content:center}
+@media (max-width:900px){.ba-wrap{grid-template-columns:1fr}}
+
+/* ---------- gallery carousel ---------- */
+.gal-top{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.arrows{display:flex;gap:10px}
+.arrow{width:50px;height:50px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:all .3s var(--ease)}
+.arrow:hover{background:#fff;color:var(--ink)}
+.arrow svg{width:18px;height:18px}
+.track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px var(--pad) 26px;scroll-padding:0 var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab}
+.track::-webkit-scrollbar{display:none}
+.track.drag{cursor:grabbing;scroll-snap-type:none}
+.track.nudge{animation:nudge 1.3s var(--ease)}
+@keyframes nudge{0%,100%{transform:none}40%{transform:translateX(-46px)}}
+.card{flex:0 0 min(74vw,330px);scroll-snap-align:start;transform:scale(var(--s,1)) rotate(var(--rt,0deg));transition:transform .2s linear;will-change:transform}
+.card button{display:block;width:100%;text-align:left}
+.card .im{border-radius:16px;overflow:hidden;background:#000;box-shadow:0 22px 40px -22px rgba(0,0,0,.9),0 0 0 1px var(--line)}
+.card .im img{width:100%;transition:transform .8s var(--ease)}
+.card button:hover .im img{transform:scale(1.03)}
+.card .cap{margin-top:12px;font-size:15px;color:var(--silver);display:flex;justify-content:space-between;gap:10px}
+.card .cap small{color:var(--mist)}
+.prog{height:2px;background:var(--line);margin:0 var(--pad);border-radius:2px;overflow:hidden;max-width:1240px}
+.prog i{display:block;height:100%;width:30%;background:linear-gradient(90deg,var(--red),var(--red-hi));border-radius:2px;transform-origin:left;transition:transform .15s linear}
+.gal-more{margin-top:30px}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(5,5,6,.94);display:none;place-items:center;padding:24px}
+.lb.open{display:grid;animation:swap .4s var(--ease)}
+.lb img{max-height:84vh;width:auto;max-width:100%;border-radius:14px}
+.lb p{text-align:center;color:var(--silver);margin-top:14px}
+.lb .x{position:absolute;top:18px;right:18px}
+
+/* ---------- studio ---------- */
+.studio{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,70px);align-items:center}
+.studio .im{border-radius:22px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.vals{display:grid;gap:0;margin-top:32px;border-top:1px solid var(--line)}
+.val{padding:18px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:30px 1fr;gap:14px}
+.val svg{width:22px;height:22px;color:var(--red-hi);margin-top:3px}
+.val b{display:block;font-weight:500;color:#fff}
+.val span{color:var(--mist);font-size:15px}
+.story{margin-top:clamp(60px,8vw,100px);position:relative;padding:clamp(28px,5vw,56px);border-radius:24px;background:radial-gradient(120% 140% at 0% 0%,rgba(255,204,2,.16),transparent 55%),var(--ink-2);border:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,40px)}
+.story .q{font:700 5.4rem/.7 var(--display);color:var(--red)}
+.story blockquote{font:400 clamp(1.15rem,2vw,1.5rem)/1.45 var(--display);font-stretch:105%;letter-spacing:-.01em;color:#fff;max-width:62ch}
+.story cite{display:block;margin-top:18px;font:300 15px var(--body);font-style:normal;color:var(--mist)}
+@media (max-width:900px){.studio{grid-template-columns:1fr}.story{grid-template-columns:1fr}.story .q{font-size:4rem;height:.5em}}
+
+/* ---------- reviews ticker ---------- */
+.rev-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:26px}
+.score{display:flex;align-items:center;gap:18px;padding:14px 22px 14px 14px;border-radius:18px;background:var(--ink-2);border:1px solid var(--line);text-decoration:none;transition:border-color .3s}
+.score:hover{border-color:var(--line-2)}
+.score .big{font:650 2.6rem/1 var(--display);font-stretch:112%}
+.score small{display:block;color:var(--mist);font-size:13.5px}
+.ticker{overflow:hidden;margin-top:46px;-webkit-mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.ticker-row{display:flex;gap:18px;width:max-content;will-change:transform}
+.ticker + .ticker{margin-top:18px}
+.rv-card{width:min(82vw,380px);flex:none;padding:24px 24px 22px;border-radius:20px;background:linear-gradient(180deg,var(--ink-3),var(--ink-2));border:1px solid var(--line);display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.rv-card::before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}
+.rv-card p{color:var(--silver);font-size:15.5px;line-height:1.55}
+.rv-card .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font:600 15px var(--display);background:var(--ink-4);border:1px solid var(--line-2);color:#fff}
+.who b{display:block;font-weight:500;font-size:15px}
+.who small{color:var(--mist);font-size:13px}
+
+/* ---------- tools ---------- */
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.panel{background:var(--ink-2);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,3.4vw,40px)}
+.panel h3{font-size:1.4rem}
+.panel > p{color:var(--mist);margin-top:10px;font-size:15.5px}
+.field{display:grid;gap:9px;margin-top:22px}
+.field > span{font-size:13.5px;color:var(--silver);letter-spacing:.02em}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+input[type=date],input[type=text]{width:100%;height:52px;border-radius:14px;border:1px solid var(--line-2);background:var(--ink);color:#fff;padding:0 16px;font:400 16px var(--body);color-scheme:dark;transition:border-color .25s}
+input:focus{outline:none;border-color:var(--red-hi)}
+input::placeholder{color:#6f7177}
+.result{margin-top:24px;padding:20px;border-radius:18px;background:var(--ink);border:1px dashed var(--line-2)}
+.result .when{font:600 1.55rem/1.15 var(--display);font-stretch:112%;margin-top:4px}
+.result .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.dealer{background:radial-gradient(90% 120% at 100% 0%,rgba(255,204,2,.14),transparent 60%),var(--ink-2)}
+.dealer ul{list-style:none;margin-top:18px;display:grid;gap:9px}
+.dealer li{display:flex;gap:11px;color:var(--silver);font-size:15.5px}
+.dealer li svg{width:18px;height:18px;color:var(--red-hi);flex:none;margin-top:4px}
+@media (max-width:900px){.tools{grid-template-columns:1fr}}
+
+/* ---------- booking ---------- */
+.book{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px;align-items:start}
+.preview{margin-top:22px;padding:18px 18px 16px;border-radius:16px 16px 16px 4px;background:#0b231a;border:1px solid rgba(37,211,102,.25);color:#d9f7e6;font-size:15px;white-space:pre-line;line-height:1.5}
+.preview small{display:block;color:#7fc6a1;font-size:12px;margin-bottom:6px;letter-spacing:.04em}
+.btn-wa{background:linear-gradient(180deg,#2fe474,var(--wa) 50%,var(--wa-2));color:#04220f;font-weight:500;box-shadow:0 12px 30px -12px rgba(37,211,102,.7)}
+.btn-wa::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.45) 48%,transparent 62%);transform:translateX(-120%);transition:transform .9s var(--ease);z-index:-1}
+.btn-wa:hover::after{transform:translateX(120%)}
+.place .im{border-radius:16px;overflow:hidden;margin-top:20px;position:relative}
+.place .im span{position:absolute;left:12px;bottom:12px;font-size:13px;padding:7px 11px;border-radius:999px;background:rgba(10,10,11,.8);backdrop-filter:blur(6px)}
+.map{position:relative;margin-top:14px;border-radius:16px;overflow:hidden;border:1px solid var(--line);display:block;height:170px;background:#0d0d10}
+.map canvas{width:100%;height:100%;display:block}
+.map b{position:absolute;right:12px;bottom:12px;font:500 13px var(--body);padding:7px 12px;border-radius:999px;background:#fff;color:var(--ink)}
+.addr{margin-top:18px;font-size:16px}
+.addr small{display:block;color:var(--mist);font-size:14px}
+.go{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.go .btn{width:100%;padding:0 12px}
+.hours{margin-top:26px;width:100%;border-collapse:collapse;font-size:15px}
+.hours td{padding:10px 12px;border-bottom:1px solid var(--line);color:var(--silver)}
+.hours td:last-child{text-align:right}
+.hours tr.today td{color:#fff;background:rgba(255,255,255,.05);font-weight:400}
+.hours tr.today td:first-child{border-radius:10px 0 0 10px}.hours tr.today td:last-child{border-radius:0 10px 10px 0}
+.hours .tag{display:inline-block;margin-left:8px;font:500 11px/1 var(--body);letter-spacing:.12em;padding:5px 8px;border-radius:999px;background:var(--grad);color:#111;vertical-align:2px}
+.hours .closed{color:var(--mist)}
+.phone{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px;padding:14px 14px 14px 18px;border-radius:16px;background:var(--ink);border:1px solid var(--line)}
+.phone span{font:600 1.15rem var(--display);font-stretch:110%;user-select:all;white-space:nowrap}
+@media (max-width:600px){.phone{flex-direction:column;align-items:flex-start}}
+.phone small{display:block;font:300 13px var(--body);color:var(--mist);font-stretch:100%}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);opacity:0;z-index:95;padding:12px 18px;border-radius:999px;background:#fff;color:var(--ink);font-size:14.5px;transition:all .45s var(--ease);pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (max-width:900px){.book{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{padding:60px 0 120px;border-top:1px solid var(--line);margin-top:clamp(80px,10vw,130px)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:26px;align-items:center}
+footer p{color:var(--mist);font-size:14px}
+footer a{color:var(--silver)}
+
+/* ---------- whatsapp float ---------- */
+.wa{position:fixed;right:18px;bottom:18px;z-index:80;display:flex;align-items:center;height:60px;padding:0 0 0 60px;border-radius:999px;background:linear-gradient(160deg,#36e57c,var(--wa) 45%,var(--wa-2));color:#04220f;text-decoration:none;box-shadow:0 14px 34px -10px rgba(18,140,75,.75);max-width:60px;overflow:visible;transition:max-width .7s var(--ease),padding .7s var(--ease)}
+.wa svg{position:absolute;left:15px;top:15px;width:30px;height:30px;animation:wig 6s ease-in-out infinite}
+.wa .lab{white-space:nowrap;overflow:hidden;font:500 15px var(--body);opacity:0;transition:opacity .4s;padding-right:22px}
+.wa.ext,.wa:hover{max-width:290px}
+.wa.ext .lab,.wa:hover .lab{opacity:1}
+.wa::before,.wa::after{content:"";position:absolute;left:0;top:0;width:60px;height:60px;border-radius:50%;border:2px solid var(--wa);animation:wave 2.6s ease-out infinite;pointer-events:none}
+.wa::after{animation-delay:1.3s}
+.wa .one{position:absolute;top:-3px;left:42px;width:20px;height:20px;border-radius:50%;background:var(--red);color:#111;font:600 11px/20px var(--body);text-align:center;border:2px solid var(--ink)}
+@keyframes wave{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+@keyframes wig{0%,88%,100%{transform:rotate(0)}90%{transform:rotate(-14deg)}93%{transform:rotate(12deg)}96%{transform:rotate(-6deg)}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv:not(.in){opacity:1;transform:none;filter:none}
+  .ceiling i{opacity:.88}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#topo" aria-label="Studio Reverse, início"><img class="logo" src="img/logo.webp" width="440" height="121" alt="Reverse Estética Automotiva"></a>
+    <nav class="nav-links" aria-label="Seções">
+      <a href="#servicos">Serviços</a><a href="#leilao">Carros de leilão</a><a href="#antes-depois">Antes e depois</a><a href="#trabalhos">Trabalhos</a><a href="#studio">O studio</a><a href="#agendar">Agendar</a>
+    </nav>
+    <a class="btn btn-red btn-sm" href="#agendar">Agendar horário</a>
+  </div>
+</header>
+
+<main id="topo">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="status num" data-status><span class="dot"></span><span data-status-text>Confira o horário</span></div>
+      <h1><span><span class="r">Excelência</span> em cada detalhe</span><span><span class="r">Transformação</span> que você vê</span><span><span class="r">Qualidade</span> que você percebe</span></h1>
+      <p class="lead">Um novo conceito em estética automotiva, cada detalhe faz a diferença. Venha se surpreender!</p>
+      <div class="cta-row">
+        <a class="btn btn-red" href="#agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>Agendar meu horário</a>
+        <a class="btn btn-ghost" href="#servicos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3l2.2 5.6L20 9.3l-4.5 3.8L17 19l-5-3.2L7 19l1.5-5.9L4 9.3l5.8-.7z"/></svg>Ver serviços</a>
+      </div>
+      <div class="proofs">
+        <span><span class="stars">★★★★★</span> 5,0 no Google · 75 avaliações</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Trabalhamos somente com agendamento</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>R. Codajás, 97 · Vila Formosa, SP</span>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="ceiling" id="ceiling" aria-hidden="true"></div>
+      <div class="shot-frame" id="shot"><img src="img/hero.webp" width="1600" height="1010" alt="Interior do Studio Reverse com Honda Civic sob a iluminação de LED" fetchpriority="high"></div>
+      <div class="float f-rating" aria-hidden="true">
+        <span class="g"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.8-6.8C35.7 2.4 30.2 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.1C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.2 6.9-10.3 6.9-17.7z"/><path fill="#FBBC05" d="M10.6 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.1C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.7-6c-2.2 1.5-5 2.3-8.2 2.3-6.2 0-11.5-4.1-13.4-9.9l-7.9 6.1C6.6 42.6 14.6 48 24 48z"/></svg></span>
+        <div><strong class="num">5,0</strong> <span class="stars">★★★★★</span><small>75 avaliações no Google</small></div>
+      </div>
+      <div class="float f-ba" aria-hidden="true"><img src="img/ba-farol-depois.webp" width="799" height="660" alt=""><span><b>Faróis renovados</b>polimento no studio</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="sec" id="servicos" style="padding-top:clamp(70px,8vw,110px)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Nossos serviços</h2>
+      <p class="tap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11.5V5.2a1.7 1.7 0 0 1 3.4 0V11"/><path d="M12.4 10.2a1.7 1.7 0 0 1 3.4 0V11.6"/><path d="M15.8 10.9a1.7 1.7 0 0 1 3.2.6v3.7c0 3.6-2.6 6.3-6 6.3h-.9c-2 0-3.3-.8-4.6-2.4l-3-3.9a1.6 1.6 0 0 1 2.4-2.1L9 14.3"/><path d="M5.6 4.4A5 5 0 0 1 10.7 1.8M16 4.4a5 5 0 0 0-1.6-1.8" opacity=".55"/></svg>Toque em cada serviço para mais informações</p>
+    </div>
+    <div class="svc">
+      <ul class="svc-list" id="svcList"></ul>
+      <div class="svc-aside"><div class="svc-panel" id="svcPanel"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEILÃO -->
+<section class="leilao" id="leilao">
+  <div class="haz" aria-hidden="true"></div>
+  <div class="lei-bg" aria-hidden="true">LEILÃO</div>
+  <div class="wrap lei-grid">
+    <div class="lei-copy rv">
+      <span class="lei-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5l6 6M12 6l6 6M4 20l7.5-7.5M9.5 8.5l6 6-3 3-6-6z"/></svg>Restauração de carros de leilão</span>
+      <h2>Comprou no leilão?<br>A gente devolve o <em>orgulho</em> do carro.</h2>
+      <p>Carro de leilão chega judiado: sujo, opaco, com riscos e cheiro de pátio. Aqui ele passa por uma restauração estética completa, por dentro, por fora e no motor. Você economizou na compra, agora é hora de ter um carro de dar orgulho, pra rodar ou pra revender valendo mais.</p>
+      <ul class="lei-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Lavagem detalhada completa, de cima a baixo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Higienização interna avançada: some o cheiro de pátio</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Limpeza técnica de motor</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Polimento com proteção: a pintura volta a brilhar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Micropintura em riscos e ralados</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Faróis e lanternas sem amarelado</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Plásticos externos vitrificados, preto de novo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Rodas, caixas de roda e suspensão limpas a fundo</span></li></ul>
+      <div class="lei-cta">
+        <a class="btn btn-black" target="_blank" rel="noopener" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Comprei%20um%20carro%20de%20leil%C3%A3o%20e%20quero%20fazer%20a%20restaura%C3%A7%C3%A3o%20com%20voc%C3%AAs.%20Posso%20mandar%20as%20fotos%3F"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Quero restaurar meu carro</a>
+        <span>Mande as fotos do carro no WhatsApp e o Mário te diz o que dá pra fazer.</span>
+      </div>
+    </div>
+    <div class="lei-side rv">
+      <figure class="lei-photo"><img src="img/s-leilao.webp" width="900" height="900" alt="Motor antes e depois da limpeza técnica no Studio Reverse" loading="lazy" decoding="async" class="fade"><figcaption>Antes e depois de verdade, feito no studio</figcaption></figure>
+      <ol class="lei-steps">
+        <li><b>1</b><span><strong>Chega do pátio</strong>Do jeito que veio: sujo, opaco e com cheiro.</span></li>
+        <li><b>2</b><span><strong>Restauração completa</strong>Dentro, fora, motor, faróis, plásticos e rodas.</span></li>
+        <li><b>3</b><span><strong>Sai valorizado</strong>Pronto pra rodar com orgulho ou revender melhor.</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="haz haz-b" aria-hidden="true"></div>
+</section>
+
+<!-- ANTES E DEPOIS -->
+<section class="sec" id="antes-depois" style="background:linear-gradient(180deg,transparent,var(--ink-2) 18%,var(--ink-2) 82%,transparent)">
+  <div class="wrap ba-wrap">
+    <div class="rv">
+      <h2>Arraste e veja a diferença.</h2>
+      <p class="lead" style="margin-top:18px">Fotos reais de carros que passaram pelo studio. Sem filtro, só técnica.</p>
+      <div class="ba-tabs" id="baTabs" role="group" aria-label="Escolha o serviço"></div>
+      <p class="ba-note" id="baNote"></p>
+    </div>
+    <div class="ba-stage rv"><div class="ba" id="ba" role="slider" tabindex="0" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+      <img class="before" alt="" decoding="async"><img class="after" alt="" decoding="async">
+      <span class="bar"></span><span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span>
+      <span class="lbl l1">Antes</span><span class="lbl l2">Depois</span>
+    </div></div>
+  </div>
+</section>
+
+<!-- TRABALHOS -->
+<section class="sec" id="trabalhos" style="padding-bottom:clamp(50px,6vw,80px)">
+  <div class="wrap gal-top rv">
+    <div class="sec-head" style="margin:0">
+      <h2>Saídos do studio.</h2>
+      <p class="lead">Do popular ao importado, cada carro recebe o mesmo cuidado.</p>
+    </div>
+    <div class="arrows"><button class="arrow" id="prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button><button class="arrow" id="next" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
+  </div>
+  <div class="track" id="track"></div>
+  <div class="prog"><i id="prog"></i></div>
+  <div class="wrap gal-more"><a class="btn btn-ghost" href="https://www.instagram.com/studioreverse.cd/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor"/></svg>Ver mais no Instagram</a></div>
+</section>
+
+<!-- STUDIO -->
+<section class="sec" id="studio" style="padding-top:clamp(50px,6vw,80px)">
+  <div class="wrap">
+    <div class="studio">
+      <div class="im rv"><img src="img/sobre.webp" width="1600" height="1200" alt="Mercedes-Benz preta brilhando sob a luz de LED do Studio Reverse" loading="lazy" decoding="async" class="fade"></div>
+      <div class="rv">
+        <h2>Um studio, não um lava-rápido.</h2>
+        <p class="lead" style="margin-top:18px">Na Rua Codajás, 97, o Mário montou um espaço com luz de inspeção no teto, produto profissional na prateleira e agenda organizada. Quem atende é quem faz.</p>
+        <div class="vals">
+          <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><div><b>Honestidade antes do serviço</b><span>Se não compensa, ele fala. Se dá pra salvar, ele testa antes.</span></div></div>
+          <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg><div><b>Explica cada produto</b><span>Você sabe o que vai no seu carro e por quê.</span></div></div>
+          <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><div><b>Data, horário e valor cumpridos</b><span>O combinado é o que acontece. Trabalhamos somente com agendamento.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="story rv">
+      <span class="q" aria-hidden="true">“</span>
+      <div>
+        <blockquote>Meu irmão “poliu” o para-brisa com bombril e riscou tudo. O Mário foi honesto: ia testar um pedaço e, se não desse, era melhor trocar. Meia hora depois ligou: “vai ficar ótimo!”. E ficou, ainda saiu cristalizado.</blockquote>
+        <cite>Pri, cliente do studio · avaliação no Google (resumida)</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section class="sec" id="avaliacoes" style="padding-top:20px;overflow:hidden">
+  <div class="wrap rev-head rv">
+    <div class="sec-head" style="margin:0">
+      <h2>Quem deixa o carro aqui, volta.</h2>
+      <p class="lead">Avaliações reais do Google, de quem já entregou a chave pro Mário.</p>
+    </div>
+    <a class="score" href="https://www.google.com/maps/place/STUDIO+REVERSE+Est%C3%A9tica+Automotiva/@-23.56874,-46.5480534,17z/data=!4m6!3m5!1s0x94ce5d1d8b303053:0x23f526637b70ec53!8m2!3d-23.56874!4d-46.5480534!16s%2Fg%2F11rcxj54rr" target="_blank" rel="noopener">
+      <span class="big num">5,0</span><span><span class="stars">★★★★★</span><small>75 avaliações · Google</small></span>
+    </a>
+  </div>
+  <div class="ticker" data-dir="1"><div class="ticker-row" id="t1"></div></div>
+  <div class="ticker" data-dir="-1"><div class="ticker-row" id="t2"></div></div>
+</section>
+
+<!-- EMPRESAS -->
+<section class="sec" id="empresas" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Atendemos lojistas e empresas.</h2>
+      <p class="lead">Carro de loja chegando pronto pra foto e carro de frota saindo sem cara de empresa.</p>
+    </div>
+    <div class="tools">
+      <div class="panel dealer rv">
+        <h3>Tem loja de carros?</h3>
+        <p>Preparação para venda com preço diferenciado para lojistas. O carro chega no pátio pronto pra foto e pra visita.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Lavagem detalhada e descontaminação de pintura</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Polimento comercial e cera protetora</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Higienização interna</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Revitalização de plásticos e borrachas</li>
+        </ul>
+        <a class="btn btn-red" style="margin-top:26px" target="_blank" rel="noopener" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Tenho%20loja%20de%20carros%20e%20quero%20saber%20o%20pre%C3%A7o%20de%20lojista%20para%20prepara%C3%A7%C3%A3o%20de%20venda.">Pedir preço de lojista</a>
+      </div>
+      <div class="panel dealer rv">
+        <h3>Sua empresa tem frota?</h3>
+        <p>Descaracterização de carros de empresa: tiramos adesivos, faixas e marcas para o carro voltar a ser de particular e valer mais na revenda.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Remoção de adesivos e faixas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Acabamento na pintura</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Lavagem e higienização para entrega</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Atendimento com agendamento para vários carros</li>
+        </ul>
+        <a class="btn btn-red" style="margin-top:26px" target="_blank" rel="noopener" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Tenho%20carros%20de%20frota%20da%20minha%20empresa%20para%20descaracterizar.%20Podemos%20conversar%3F">Falar sobre minha frota</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDAR -->
+<section class="sec" id="agendar" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Monte seu pedido e mande pronto.</h2>
+      <p class="lead">Escolha o que precisa e a mensagem sai organizada no WhatsApp do Mário. Ele confirma dia e valor.</p>
+    </div>
+    <div class="book">
+      <div class="panel rv">
+        <div class="field" style="margin-top:0"><span>O que seu carro precisa? (pode escolher mais de um)</span><div class="chips" id="bkSvc"></div></div>
+        <div class="field"><span>Qual é o carro?</span><input type="text" id="bkCar" placeholder="Ex.: Corolla 2019 prata" autocomplete="off"></div>
+        <div class="field"><span>Melhor dia</span><div class="chips num" id="bkDay"></div></div>
+        <div class="field"><span>Período</span><div class="chips" id="bkPer"></div></div>
+        <div class="field"><span>Seu nome</span><input type="text" id="bkName" placeholder="Como o Mário te chama?" autocomplete="given-name"></div>
+        <div class="preview" id="bkPrev"></div>
+        <a class="btn btn-wa" id="bkGo" style="margin-top:18px;width:100%" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Enviar pedido no WhatsApp</a>
+      </div>
+      <div class="panel place rv">
+        <div class="status num" data-status style="margin:0"><span class="dot"></span><span data-status-text>…</span></div>
+        <div class="addr">R. Codajás, 97 · Vila Formosa<small>São Paulo, SP · CEP 03359-040</small></div>
+        <div class="go">
+          <a class="btn btn-red btn-sm" href="https://waze.com/ul?ll=-23.56874,-46.5480534&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 15.5C3.6 14.6 3 13 3 11a8 8 0 0 1 16 0c0 3.4-2.3 5.8-5.6 6.3l-3.8.1"/><circle cx="8" cy="18.5" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/><path d="M9.5 10h.01M14.5 10h.01M9.5 13.2c1.3 1 3.7 1 5 0"/></svg>Ir pelo Waze</a>
+          <a class="btn btn-ghost btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=-23.56874,-46.5480534" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Google Maps</a>
+        </div>
+        <div class="im"><img src="img/fachada.webp" width="1200" height="900" alt="Fachada do Studio Reverse na Rua Codajás, 97, com o portão e o banner da marca" loading="lazy" decoding="async" class="fade"><span>Procure o banner da Reverse no portão</span></div>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=STUDIO%20REVERSE%20Est%C3%A9tica%20Automotiva%20R.%20Codaj%C3%A1s%2097" target="_blank" rel="noopener" aria-label="Abrir localização no Google Maps"><canvas id="map"></canvas><b>Abrir no mapa</b></a>
+        <table class="hours num" id="hours"></table>
+        <div class="phone"><div><span id="ph">(11) 91268-3452</span><small>WhatsApp e ligação</small></div><button class="btn btn-ghost btn-sm" id="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Copiar</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.webp" width="440" height="121" alt="Reverse Estética Automotiva" style="width:180px" loading="lazy">
+    <p>R. Codajás, 97 · Vila Formosa · São Paulo · <a href="https://www.instagram.com/studioreverse.cd/" target="_blank" rel="noopener">@studioreverse.cd</a></p>
+    <p>Site por <a href="https://www.instagram.com/duh.lab/" target="_blank" rel="noopener">Duh Lab</a></p>
+  </div>
+</footer>
+
+<a class="wa" id="wa" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" aria-label="Agende pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
+  <span class="lab">Agende pelo WhatsApp</span><span class="one">1</span>
+</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button class="arrow x" id="lbx" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button><figure><img id="lbimg" alt=""><p id="lbcap"></p></figure></div>
+<div class="toast" id="toast">Número copiado</div>
+
+<script>
+(()=>{
+const WA='5511912683452';
+const $=s=>document.querySelector(s);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ico={arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'};
+
+/* ---------- nav ---------- */
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>30),{passive:true});
+
+/* ---------- hours / status ---------- */
+const OPEN=[null,[510,1080],[510,1080],[510,1080],[510,1080],[510,1080],null]; // dom..sáb, minutos
+const DN=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+const fmt=m=>{const h=Math.floor(m/60),mi=m%60;return h+'h'+(mi?String(mi).padStart(2,'0'):'')};
+function spNow(){const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());const o={};p.forEach(x=>o[x.type]=x.value);return{d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday),m:(+o.hour)*60+(+o.minute)}}
+function status(){const {d,m}=spNow();const t=OPEN[d];
+  if(t&&m>=t[0]&&m<t[1]){const left=t[1]-m;return{open:true,txt:'<b>Aberto agora</b> · '+(left<=45?'fecha em '+left+' min':'até as '+fmt(t[1]))}}
+  if(t&&m<t[0])return{open:false,txt:'<b>Fechado agora</b> · abre hoje às '+fmt(t[0])};
+  for(let i=1;i<=7;i++){const nd=(d+i)%7;if(OPEN[nd])return{open:false,txt:'<b>Fechado agora</b> · abre '+(i===1?'amanhã':DN[nd].toLowerCase())+' às '+fmt(OPEN[nd][0])}}
+}
+function paintStatus(){const s=status();document.querySelectorAll('[data-status]').forEach(el=>{el.classList.toggle('is-open',s.open);el.classList.toggle('is-closed',!s.open);el.querySelector('[data-status-text]').innerHTML=s.txt});
+  const {d}=spNow();const order=[1,2,3,4,5,6,0];
+  $('#hours').innerHTML=order.map(i=>{const t=OPEN[i];return '<tr class="'+(i===d?'today':'')+'"><td>'+DN[i]+(i===d?'<span class="tag">HOJE</span>':'')+'</td><td class="'+(t?'':'closed')+'">'+(t?'08h30 às 18h':'Fechado')+'</td></tr>'}).join('')}
+paintStatus();setInterval(paintStatus,30000);
+
+/* ---------- hero: LED ceiling ---------- */
+const ceil=$('#ceiling');
+function buildCeiling(){ceil.innerHTML='';const w=ceil.clientWidth;const n=Math.max(3,Math.round(w/190));for(let i=0;i<n;i++){const b=document.createElement('i');const seg=w/n;b.style.left=(i*seg+seg*.12)+'px';b.style.width=(seg*.76)+'px';b.style.setProperty('--d',(i*0.09+Math.random()*.15).toFixed(2)+'s');ceil.appendChild(b)}}
+buildCeiling();addEventListener('resize',()=>{buildCeiling();ceil.classList.add('on')});requestAnimationFrame(()=>setTimeout(()=>ceil.classList.add('on'),250));
+const shot=$('#shot');const runSweep=()=>{shot.classList.remove('sweep');void shot.offsetWidth;shot.classList.add('sweep')};
+if(!reduce){setTimeout(runSweep,1300);setInterval(runSweep,9000)}
+
+/* ---------- fade images ---------- */
+document.querySelectorAll('img.fade').forEach(i=>{if(i.complete)i.classList.add('ok');else i.addEventListener('load',()=>i.classList.add('ok'))});
+
+/* ---------- reveal ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* ---------- services ---------- */
+const SVC=[
+ {id:'lavagem',t:'Lavagem detalhada Gold e Platinum',s:'Limpeza nos mínimos detalhes, em dois níveis',img:'s-lavagem',w:900,h:675,d:'Bem além da lavagem comum: limpeza minuciosa que preserva a pintura e deixa o carro com brilho por mais tempo. Escolha entre a Gold e a Platinum, a mais completa.',tags:['Gold','Platinum','Hidrorrepelência']},
+ {id:'higienizacao',t:'Higienização interna avançada',s:'Bancos, teto, carpete e ar-condicionado',img:'s-higienizacao',w:900,h:900,d:'Limpeza profunda em todo o interior: teto, colunas, painel, console, volante, forro de portas, cintos, bancos, carpete, tapetes e porta-malas. Bancos de couro recebem hidratante à base de lanolina.',tags:['Oxi-sanitização','Ar-condicionado + filtro de cabine','Remoção de odores']},
+ {id:'venda',t:'Preparação para venda',s:'O carro pronto para anunciar',img:'s-venda',w:900,h:840,d:'Pacote completo para o carro chegar no anúncio valendo mais: lavagem detalhada, descontaminação, polimento comercial, cera protetora, higienização interna e revitalização de plásticos.',tags:['Polimento comercial','Higienização','Preço especial para lojistas']},
+ {id:'micropintura',t:'Micropintura',s:'Pequenos reparos sem perder a originalidade',img:'s-micropintura',w:900,h:900,d:'Risco no para-choque, ralado na porta, marca de estacionamento. Reparo localizado, rápido e econômico, que mantém a pintura original do carro.',tags:['Para-choques','Portas','Riscos e ralados']},
+ {id:'polimento',t:'Polimento com e sem proteção',s:'Tira riscos finos, manchas e o fosco',img:'s-polimento',w:900,h:900,d:'Correção da pintura com máquina e produto certo para cada caso, devolvendo o reflexo de espelho. Com proteção, a pintura ganha uma camada extra que segura o brilho por muito mais tempo.',tags:['Sem proteção','Com proteção','Cristalização de pintura']},
+ {id:'motor',t:'Limpeza técnica de motor',s:'Cofre limpo, sem risco para a parte elétrica',img:'s-motor',w:900,h:675,d:'Limpeza feita com técnica e produto próprio para o motor. Ideal depois de viagem longa ou antes de vender o carro.',tags:['Limpeza técnica','Proteção de plásticos','Antes de vender']},
+ {id:'parabrisa',t:'Cristalização do para-brisa',s:'Mais visibilidade na chuva',img:'s-parabrisa',w:900,h:675,d:'Descontaminação e cristalização do vidro: a chuva escorre sozinha, você enxerga melhor à noite e as palhetas duram mais.',tags:['Super hidrofóbico','Menos desgaste das palhetas','Canaletas limpas e lubrificadas'],price:[['R$ 95','investimento divulgado'],['40 min','de trabalho'],['até 6 meses','de proteção']]},
+ {id:'farois',t:'Polimento dos faróis e lanternas',s:'Farol amarelado de volta ao novo',img:'s-farois',w:900,h:675,d:'Faróis e lanternas voltam a ter aspecto de novo e a luz ilumina melhor à noite. Um dos serviços com melhor custo-benefício para valorizar o carro.',tags:['Aspecto de novo','Mais luminosidade','Faróis e lanternas']},
+ {id:'plasticos',t:'Vitrificação dos plásticos externos',s:'Preto profundo em para-choques e molduras',img:'s-plasticos',w:900,h:900,d:'Para-choques, grades, retrovisores e molduras desbotados recuperam o preto profundo e ganham proteção contra sol e chuva.',tags:['Para-choques','Grades e molduras','Proteção contra o sol']},
+ {id:'leilao',t:'Restauração de carros de leilão',s:'Do pátio do leilão para a sua garagem',img:'s-leilao',w:900,h:900,d:'Carro arrematado em leilão chega sujo, opaco e com cheiro de pátio. Aqui ele passa por uma restauração estética completa, por dentro, por fora e no motor, e sai valorizado.',tags:['Restauração completa','Motor, interior e pintura','Valoriza na revenda'],more:true},
+ {id:'frota',t:'Descaracterização de frota',s:'Carros de empresa prontos para revenda',img:'s-frota',w:900,h:900,d:'Remoção de adesivos, faixas e marcas da empresa, com acabamento na pintura para o carro voltar a parecer de particular e valer mais na revenda.',tags:['Remoção de adesivos','Acabamento na pintura','Atendemos empresas']},
+ {id:'rodas',t:'Limpeza avançada de rodas, caixas de roda e suspensão',s:'O detalhe que quase ninguém limpa',img:'s-rodas',w:900,h:989,d:'Rodas, caixas de roda e suspensão limpas a fundo, sem o barro e a fuligem de freio acumulados. O carro fica impecável até onde quase ninguém olha.',tags:['Rodas','Caixas de roda','Suspensão']},
+];
+const list=$('#svcList'),panel=$('#svcPanel');const mq=matchMedia('(max-width:900px)');let cur=0;
+list.innerHTML=SVC.map((s,i)=>'<li class="svc-item" data-i="'+i+'"><button class="svc-btn" aria-expanded="false"><span><span class="t">'+s.t+'</span><span class="s">'+s.s+'</span></span><span class="ar">'+ico.arrow+'</span></button></li>').join('');
+function panelHTML(s){return '<div class="ph"><img src="img/'+s.img+'.webp" width="'+s.w+'" height="'+s.h+'" alt="'+s.t+' no Studio Reverse" decoding="async"></div><div class="bd swap"><h3>'+s.t+'</h3><p>'+s.d+'</p><div class="tags">'+s.tags.map(t=>'<span>'+t+'</span>').join('')+'</div>'+(s.price?'<div class="price num">'+s.price.map(p=>'<span><b>'+p[0]+'</b>'+p[1]+'</span>').join('')+'</div>':'')+(s.more?'<div class="row2"><a class="btn btn-red" href="#leilao">Ver como funciona</a><a class="btn btn-ghost" href="#agendar" data-pick="'+s.id+'">Orçamento</a></div>':'<a class="btn btn-red" href="#agendar" data-pick="'+s.id+'">Quero orçamento deste</a>')+'</div>'}
+function openSvc(i,scroll){cur=i;const s=SVC[i];
+  list.querySelectorAll('.svc-item').forEach((li,k)=>{li.classList.toggle('on',k===i);li.querySelector('button').setAttribute('aria-expanded',k===i)});
+  panel.innerHTML=panelHTML(s);
+  if(mq.matches){const li=list.children[i];li.appendChild(panel);if(scroll)setTimeout(()=>li.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}),60)}
+  else $('.svc-aside').appendChild(panel);
+}
+list.addEventListener('click',e=>{const li=e.target.closest('.svc-item');if(!li||e.target.closest('.svc-panel'))return;const i=+li.dataset.i;if(mq.matches&&i===cur&&li.contains(panel)){li.classList.remove('on');panel.remove();cur=-1;return}openSvc(i,mq.matches)});
+mq.addEventListener('change',()=>openSvc(cur<0?0:cur));openSvc(0);
+const sp=new Image();SVC.forEach(s=>{const im=new Image();im.src='img/'+s.img+'.webp'});
+
+/* ---------- before / after ---------- */
+const BA=[
+ {k:'parachoque',t:'Para-choque ralado',n:'Micropintura: o para-choque ralado recuperado sem trocar a peça e sem perder a pintura original.',w:700,h:931},
+ {k:'farol',t:'Faróis',n:'Farol opaco e amarelado de volta à transparência.',w:799,h:660},
+ {k:'polimento',t:'Polimento',n:'Polimento técnico: o reflexo da luz mostra a pintura sem marcas.',w:700,h:934},
+ {k:'motor',t:'Motor',n:'Limpeza técnica de motor: do pó ao cofre de concessionária.',w:1100,h:339},
+];
+const ba=$('#ba'),bImg=ba.querySelector('.before'),aImg=ba.querySelector('.after');
+$('#baTabs').innerHTML=BA.map((b,i)=>'<button class="chip" aria-pressed="'+(i===0)+'" data-i="'+i+'">'+b.t+'</button>').join('');
+function sizeBA(b){const maxH=Math.min(innerHeight*.72,620);const maxW=ba.parentElement.clientWidth;let w=maxW,h=w*b.h/b.w;if(h>maxH){h=maxH;w=h*b.w/b.h}ba.style.width=w+'px';ba.style.height=h+'px'}
+let curBA=0;function setBA(i){curBA=i;const b=BA[i];bImg.src='img/ba-'+b.k+'-antes.webp';aImg.src='img/ba-'+b.k+'-depois.webp';$('#baNote').textContent=b.n;sizeBA(b);
+  document.querySelectorAll('#baTabs .chip').forEach((c,k)=>c.setAttribute('aria-pressed',k===i));setX(50)}
+function setX(p){p=Math.max(0,Math.min(100,p));ba.style.setProperty('--x',p+'%');ba.setAttribute('aria-valuenow',Math.round(p))}
+$('#baTabs').addEventListener('click',e=>{const c=e.target.closest('.chip');if(c)setBA(+c.dataset.i)});
+let dragBA=false;const px=e=>{const r=ba.getBoundingClientRect();return (e.clientX-r.left)/r.width*100};
+ba.addEventListener('pointerdown',e=>{dragBA=true;ba.setPointerCapture(e.pointerId);setX(px(e))});
+ba.addEventListener('pointermove',e=>{if(dragBA)setX(px(e))});
+ba.addEventListener('pointerup',()=>dragBA=false);ba.addEventListener('pointercancel',()=>dragBA=false);
+ba.addEventListener('keydown',e=>{const v=+ba.getAttribute('aria-valuenow');if(e.key==='ArrowLeft')setX(v-5);if(e.key==='ArrowRight')setX(v+5)});
+addEventListener('resize',()=>sizeBA(BA[curBA]));setBA(0);
+BA.forEach(b=>{new Image().src='img/ba-'+b.k+'-antes.webp';new Image().src='img/ba-'+b.k+'-depois.webp'});
+// demo swipe when visible
+new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting&&!reduce){o.disconnect();let t0=null;const f=ts=>{if(!t0)t0=ts;const k=(ts-t0)/1800;if(k>=1){setX(50);return}setX(50+Math.sin(k*Math.PI*2)*28);requestAnimationFrame(f)};setTimeout(()=>requestAnimationFrame(f),500)}})},{threshold:.6}).observe(ba);
+
+/* ---------- gallery ---------- */
+const CARS=[['c-mercedes','Mercedes-Benz Classe C',820,615],['c-cayenne','Porsche Cayenne',820,615],['c-bmw-azul','BMW Série 3',820,615],['c-tcross','Volkswagen T-Cross',820,657],['c-kicks','Nissan Kicks',820,800],['c-corolla','Toyota Corolla',820,615],['c-mercedes-lateral','Mercedes-Benz',820,615],['c-creta','Hyundai Creta',820,734],['c-bmw-branca','BMW Série 3',820,814],['c-picanto','Kia Picanto',820,637],['c-fiesta','Ford Fiesta',820,615],['c-spin','Chevrolet Spin',820,633]];
+const track=$('#track');
+track.innerHTML=CARS.map((c,i)=>'<div class="card"><button data-i="'+i+'" aria-label="Ampliar foto: '+c[1]+'"><div class="im"><img src="img/'+c[0]+'.webp" width="'+c[2]+'" height="'+c[3]+'" alt="'+c[1]+' no Studio Reverse" decoding="async" class="fade"></div><div class="cap"><span>'+c[1]+'</span><small>no studio</small></div></button></div>').join('');
+track.querySelectorAll('img.fade').forEach(i=>{if(i.complete)i.classList.add('ok');else i.addEventListener('load',()=>i.classList.add('ok'))});
+const cards=[...track.children],prog=$('#prog');
+function shape(){const r=track.getBoundingClientRect(),cx=r.left+r.width/2;cards.forEach(c=>{const b=c.getBoundingClientRect();const d=(b.left+b.width/2-cx)/r.width;const a=Math.min(1,Math.abs(d));c.style.setProperty('--s',(1-a*.08).toFixed(3));c.style.setProperty('--rt',(d*2.2).toFixed(2)+'deg')});
+  const max=track.scrollWidth-track.clientWidth;const vis=track.clientWidth/track.scrollWidth;prog.style.width=(vis*100)+'%';prog.style.transform='translateX('+(max?track.scrollLeft/max*(1/vis-1)*100:0)+'%)'}
+track.addEventListener('scroll',()=>requestAnimationFrame(shape),{passive:true});addEventListener('resize',shape);shape();
+const step=()=>cards[0].getBoundingClientRect().width+18;
+$('#next').onclick=()=>track.scrollBy({left:step(),behavior:'smooth'});$('#prev').onclick=()=>track.scrollBy({left:-step(),behavior:'smooth'});
+let down=false,sx=0,sl=0,moved=0;
+track.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down=true;moved=0;sx=e.clientX;sl=track.scrollLeft;track.classList.add('drag')});
+addEventListener('pointermove',e=>{if(!down)return;moved=Math.abs(e.clientX-sx);track.scrollLeft=sl-(e.clientX-sx)});
+addEventListener('pointerup',()=>{if(!down)return;down=false;track.classList.remove('drag')});
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting&&!reduce){o.disconnect();setTimeout(()=>track.classList.add('nudge'),350)}}),{threshold:.5}).observe(track);
+const lb=$('#lb');
+track.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||moved>6)return;const c=CARS[+b.dataset.i];$('#lbimg').src='img/'+c[0]+'.webp';$('#lbimg').alt=c[1];$('#lbcap').textContent=c[1]+' · Studio Reverse';lb.classList.add('open');$('#lbx').focus()});
+const closeLb=()=>lb.classList.remove('open');$('#lbx').onclick=closeLb;lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+/* ---------- reviews ticker ---------- */
+const RV=[
+ ['Renato F.','Serviço de excelência, perfeição em cada detalhe. Limpeza completa, motor e polimento: meu carro ficou zero, mesmo sendo 2012. Preço super justo.'],
+ ['Alessandra R.','Ótimo atendimento, excelente serviço. A cristalização ficou perfeita, tirou todas as manchas. O carro ficou zero!'],
+ ['Adalberto N.','Experiência excepcional, especialmente graças ao proprietário, Mário. Atendimento com extrema cordialidade e serviço de higienização impecável.'],
+ ['Emanuel P.','Levei para fazer toda a lavagem, incluindo motor, depois de uma viagem de mais de 4.000 km. Resultado impecável!'],
+ ['Giovanna S.','Studio impecável na organização, atendimento top e serviço excelente. Fiz uma higienização completa e gostei muito.'],
+ ['Flavio P.','Super atencioso aos detalhes. Já é o 2º carro que faço com ele. Preço justo por um trabalho de excelente qualidade.'],
+ ['José L.','Fiz cristalização no meu Polo e micropintura no para-choque do Creta da minha esposa. Resultado sempre acima do esperado.'],
+ ['André F.','Higienização interna ficou boa demais. O carro estava com cheiro de velho e saiu muito limpo e cheiroso.'],
+ ['Evandro','Profissional honesto: cumpriu data, horário, valor e ainda fez um serviço adicional sem custo. Certamente retornarei.'],
+ ['Wandalla','Atendimento e trabalho impecáveis. Prontidão em explicar tudo sobre os produtos que seriam usados no meu carro.'],
+ ['Camila A.','Trabalho impecável, profissional de altíssima qualidade. Podem confiar seu veículo de olhos fechados!'],
+ ['Rosangela','Serviço impecável, ótimo atendimento e bons preços. Meu carro ficou lindo! Já é o terceiro carro que levo.'],
+];
+const card=r=>'<article class="rv-card"><span class="stars" aria-label="5 estrelas">★★★★★</span><p>'+r[1]+'</p><div class="who"><span class="av">'+r[0][0]+'</span><div><b>'+r[0]+'</b><small>Avaliação no Google</small></div></div></article>';
+const half=Math.ceil(RV.length/2);
+[[$('#t1'),RV.slice(0,half)],[$('#t2'),RV.slice(half)]].forEach(([row,items])=>{row.innerHTML=items.map(card).join('')+items.map(card).join('')});
+document.querySelectorAll('.ticker').forEach(tk=>{const row=tk.firstElementChild,dir=+tk.dataset.dir;let x=dir>0?0:null,paused=false,vis=false,last=0;
+  tk.addEventListener('mouseenter',()=>paused=true);tk.addEventListener('mouseleave',()=>paused=false);
+  new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(tk);
+  const loop=ts=>{const dt=Math.min(50,ts-(last||ts));last=ts;const w=row.scrollWidth/2;if(x===null)x=-w;
+    if(vis&&!paused&&!reduce){x-=dir*dt*.035;if(x<=-w)x+=w;if(x>0)x-=w}row.style.transform='translate3d('+x+'px,0,0)';requestAnimationFrame(loop)};requestAnimationFrame(loop)});
+
+/* ---------- booking builder ---------- */
+const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo'}).format(new Date());
+const BK=['Lavagem Gold','Lavagem Platinum','Higienização interna','Preparação para venda','Micropintura','Polimento','Polimento com proteção','Motor','Para-brisa','Faróis e lanternas','Plásticos externos','Carro de leilão','Frota de empresa','Rodas e suspensão'];
+const MAPID={lavagem:'Lavagem Gold',higienizacao:'Higienização interna',venda:'Preparação para venda',micropintura:'Micropintura',polimento:'Polimento',motor:'Motor',parabrisa:'Para-brisa',farois:'Faróis e lanternas',plasticos:'Plásticos externos',leilao:'Carro de leilão',frota:'Frota de empresa',rodas:'Rodas e suspensão'};
+const sel=new Set();let day=null,per=null;
+$('#bkSvc').innerHTML=BK.map(s=>'<button class="chip" aria-pressed="false" data-v="'+s+'">'+s+'</button>').join('');
+// próximos dias úteis
+(function(){const out=[];const base=new Date(today()+'T12:00:00');for(let i=0;out.length<5&&i<14;i++){const dt=new Date(base);dt.setDate(base.getDate()+i);const wd=dt.getDay();if(!OPEN[wd])continue;if(i===0&&spNow().m>=OPEN[wd][1]-60)continue;
+  const lab=(i===0?'Hoje':i===1?'Amanhã':DN[wd].slice(0,3))+' '+String(dt.getDate()).padStart(2,'0')+'/'+String(dt.getMonth()+1).padStart(2,'0');out.push(lab)}
+  out.push('A combinar');$('#bkDay').innerHTML=out.map(l=>'<button class="chip" aria-pressed="false" data-v="'+l+'">'+l+'</button>').join('')})();
+$('#bkPer').innerHTML=['Manhã','Tarde','Tanto faz'].map(l=>'<button class="chip" aria-pressed="false" data-v="'+l+'">'+l+'</button>').join('');
+function upd(){const name=$('#bkName').value.trim(),car=$('#bkCar').value.trim();
+  let m='Olá Mário! '+(name?'Aqui é '+name+'. ':'')+'Vim pelo site e quero agendar.';
+  m+='\n\nServiço: '+(sel.size?[...sel].join(', '):'quero uma avaliação');
+  if(car)m+='\nCarro: '+car;if(day)m+='\nDia: '+day;if(per)m+='\nPeríodo: '+per;
+  $('#bkPrev').innerHTML='<small>SUA MENSAGEM</small>'+m.replace(/</g,'&lt;');$('#bkGo').href='https://wa.me/'+WA+'?text='+encodeURIComponent(m)}
+$('#bkSvc').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;const v=c.dataset.v;sel.has(v)?sel.delete(v):sel.add(v);c.setAttribute('aria-pressed',sel.has(v));upd()});
+function single(box,setter){box.addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;const on=c.getAttribute('aria-pressed')!=='true';box.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed','false'));c.setAttribute('aria-pressed',on);setter(on?c.dataset.v:null);upd()})}
+single($('#bkDay'),v=>day=v);single($('#bkPer'),v=>per=v);
+['#bkName','#bkCar'].forEach(s=>$(s).addEventListener('input',upd));upd();
+document.addEventListener('click',e=>{const a=e.target.closest('[data-pick]');if(!a)return;const v=MAPID[a.dataset.pick];if(v&&!sel.has(v)){sel.add(v);$('#bkSvc [data-v="'+v+'"]').setAttribute('aria-pressed','true');upd()}});
+
+/* ---------- copy phone ---------- */
+const toast=$('#toast');$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText('11912683452')}catch(e){const r=document.createRange();r.selectNodeContents($('#ph'));getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy')}toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)};
+
+/* ---------- stylised map ---------- */
+const cv=$('#map'),cx=cv.getContext('2d');let mapVis=false,mapT=0;
+function drawMap(t){const r=cv.getBoundingClientRect();const dpr=Math.min(2,devicePixelRatio||1);if(cv.width!==Math.round(r.width*dpr)){cv.width=r.width*dpr;cv.height=r.height*dpr}
+  const W=cv.width,H=cv.height;cx.setTransform(1,0,0,1,0,0);cx.fillStyle='#0d0d10';cx.fillRect(0,0,W,H);cx.scale(dpr,dpr);const w=r.width,h=r.height;
+  cx.strokeStyle='rgba(255,255,255,.07)';cx.lineWidth=1;for(let i=-4;i<14;i++){cx.beginPath();cx.moveTo(i*46,0);cx.lineTo(i*46+70,h);cx.stroke()}for(let j=0;j<8;j++){cx.beginPath();cx.moveTo(0,j*30+8);cx.lineTo(w,j*30-16);cx.stroke()}
+  cx.strokeStyle='rgba(255,255,255,.18)';cx.lineWidth=7;cx.lineCap='round';cx.beginPath();cx.moveTo(-10,h*.62);cx.bezierCurveTo(w*.3,h*.55,w*.6,h*.68,w+10,h*.5);cx.stroke();
+  cx.lineWidth=4;cx.beginPath();cx.moveTo(w*.48,-10);cx.lineTo(w*.56,h+10);cx.stroke();
+  cx.fillStyle='rgba(255,255,255,.45)';cx.font='500 11px Jost, sans-serif';cx.fillText('R. CODAJÁS',w*.06,h*.56);
+  const px=w*.53,py=h*.6;const pulse=(t/1600)%1;cx.beginPath();cx.arc(px,py,8+pulse*26,0,7);cx.fillStyle='rgba(255,204,2,'+(0.35*(1-pulse))+')';cx.fill();
+  cx.beginPath();cx.arc(px,py,8,0,7);cx.fillStyle='#ffcc02';cx.fill();cx.lineWidth=3;cx.strokeStyle='#fff';cx.stroke()}
+new IntersectionObserver(es=>mapVis=es[0].isIntersecting).observe(cv);
+(function loop(t){if(mapVis||!mapT){drawMap(reduce?0:t);mapT=1}requestAnimationFrame(loop)})(0);
+
+/* ---------- leilão parallax ---------- */
+const lbg=document.querySelector('.lei-bg'),lsec=document.getElementById('leilao');
+if(!reduce)addEventListener('scroll',()=>{const r=lsec.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;lbg.style.setProperty('--lx',(-(innerHeight-r.top)*.18).toFixed(1)+'px')},{passive:true});
+
+/* ---------- whatsapp float ---------- */
+const wa=$('#wa');setTimeout(()=>{wa.classList.add('ext');setTimeout(()=>wa.classList.remove('ext'),4200)},2600);
+})();
+</script>
+</body>
+</html>
