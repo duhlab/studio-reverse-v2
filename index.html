@@ -96,8 +96,8 @@ section{position:relative}
 .status{display:inline-flex;align-items:center;gap:10px;padding:8px 15px 8px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:14px;color:var(--silver);margin-bottom:26px}
 .dot{position:relative;width:9px;height:9px;border-radius:50%;background:var(--mist);flex:none}
 .dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:ping 1.8s var(--ease) infinite}
-.is-open .dot{background:#3ddc84}.is-closed .dot{background:var(--red-lo)}
-.is-open b{color:#7ff0ad}.is-closed b{color:#ffc266}
+.is-open .dot{background:#3ddc84}.is-closed .dot{background:#ff3b3b}
+.is-open b{color:#7ff0ad}.is-closed b{color:#ff7a7a}
 .status b{font-weight:500}
 @keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(3);opacity:0}}
 .hero h1{display:grid;gap:.06em}.hero h1 .r,.gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding:.04em .1em .1em;margin:0 -.1em}
@@ -307,6 +307,8 @@ input::placeholder{color:#6f7177}
 
 /* ---------- booking ---------- */
 .book{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px;align-items:start}
+.car3{display:grid;grid-template-columns:1.6fr .8fr 1fr;gap:0 12px}
+@media (max-width:600px){.car3{grid-template-columns:1fr 1fr}.car3 .field:first-child{grid-column:1/-1}}
 .preview{margin-top:22px;padding:18px 18px 16px;border-radius:16px 16px 16px 4px;background:#0b231a;border:1px solid rgba(37,211,102,.25);color:#d9f7e6;font-size:15px;white-space:pre-line;line-height:1.5}
 .preview small{display:block;color:#7fc6a1;font-size:12px;margin-bottom:6px;letter-spacing:.04em}
 .btn-wa{background:linear-gradient(180deg,#2fe474,var(--wa) 50%,var(--wa-2));color:#04220f;font-weight:500;box-shadow:0 12px 30px -12px rgba(37,211,102,.7)}
@@ -434,7 +436,7 @@ footer a{color:var(--silver)}
       </div>
     </div>
     <div class="lei-side rv">
-      <figure class="lei-photo"><img src="img/s-leilao.webp" width="900" height="900" alt="Motor antes e depois da limpeza técnica no Studio Reverse" loading="lazy" decoding="async" class="fade"><figcaption>Antes e depois de verdade, feito no studio</figcaption></figure>
+      <figure class="lei-photo"><img src="img/leilao.webp" width="1200" height="675" alt="Carro preto ao fundo e martelo de leilão em primeiro plano" loading="lazy" decoding="async" class="fade"><figcaption>Arrematou? Traz pra Reverse.</figcaption></figure>
       <ol class="lei-steps">
         <li><b>1</b><span><strong>Chega do pátio</strong>Do jeito que veio: sujo, opaco e com cheiro.</span></li>
         <li><b>2</b><span><strong>Restauração completa</strong>Dentro, fora, motor, faróis, plásticos e rodas.</span></li>
@@ -545,6 +547,7 @@ footer a{color:var(--silver)}
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Atendimento com agendamento para vários carros</li>
         </ul>
         <a class="btn btn-red" style="margin-top:26px" target="_blank" rel="noopener" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Tenho%20carros%20de%20frota%20da%20minha%20empresa%20para%20descaracterizar.%20Podemos%20conversar%3F">Falar sobre minha frota</a>
+        <a class="btn btn-ghost" style="margin-top:26px" href="#antes-depois" data-ba="frota">Ver antes e depois</a>
       </div>
     </div>
   </div>
@@ -555,14 +558,16 @@ footer a{color:var(--silver)}
   <div class="wrap">
     <div class="sec-head rv">
       <h2>Monte seu pedido e mande pronto.</h2>
-      <p class="lead">Escolha o que precisa e a mensagem sai organizada no WhatsApp do Mário. Ele confirma dia e valor.</p>
+      <p class="lead">Escolha o serviço, diga qual é o carro e a mensagem sai organizada no WhatsApp do Mário. Ele te responde com o valor e os horários livres na agenda.</p>
     </div>
     <div class="book">
       <div class="panel rv">
         <div class="field" style="margin-top:0"><span>O que seu carro precisa? (pode escolher mais de um)</span><div class="chips" id="bkSvc"></div></div>
-        <div class="field"><span>Qual é o carro?</span><input type="text" id="bkCar" placeholder="Ex.: Corolla 2019 prata" autocomplete="off"></div>
-        <div class="field"><span>Melhor dia</span><div class="chips num" id="bkDay"></div></div>
-        <div class="field"><span>Período</span><div class="chips" id="bkPer"></div></div>
+        <div class="car3">
+          <div class="field"><span>Modelo do carro</span><input type="text" id="bkCar" placeholder="Ex.: Corolla" autocomplete="off"></div>
+          <div class="field"><span>Ano</span><input type="text" id="bkYear" placeholder="Ex.: 2019" inputmode="numeric" maxlength="4" autocomplete="off"></div>
+          <div class="field"><span>Cor</span><input type="text" id="bkColor" placeholder="Ex.: prata" autocomplete="off"></div>
+        </div>
         <div class="field"><span>Seu nome</span><input type="text" id="bkName" placeholder="Como o Mário te chama?" autocomplete="given-name"></div>
         <div class="preview" id="bkPrev"></div>
         <a class="btn btn-wa" id="bkGo" style="margin-top:18px;width:100%" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Enviar pedido no WhatsApp</a>
@@ -645,18 +650,18 @@ const SVC=[
  {id:'higienizacao',t:'Higienização interna avançada',s:'Bancos, teto, carpete e ar-condicionado',img:'s-higienizacao',w:900,h:900,d:'Limpeza profunda em todo o interior: teto, colunas, painel, console, volante, forro de portas, cintos, bancos, carpete, tapetes e porta-malas. Bancos de couro recebem hidratante à base de lanolina.',tags:['Oxi-sanitização','Ar-condicionado + filtro de cabine','Remoção de odores']},
  {id:'venda',t:'Preparação para venda',s:'O carro pronto para anunciar',img:'s-venda',w:900,h:840,d:'Pacote completo para o carro chegar no anúncio valendo mais: lavagem detalhada, descontaminação, polimento comercial, cera protetora, higienização interna e revitalização de plásticos.',tags:['Polimento comercial','Higienização','Preço especial para lojistas']},
  {id:'micropintura',t:'Micropintura',s:'Pequenos reparos sem perder a originalidade',img:'s-micropintura',w:900,h:900,d:'Risco no para-choque, ralado na porta, marca de estacionamento. Reparo localizado, rápido e econômico, que mantém a pintura original do carro.',tags:['Para-choques','Portas','Riscos e ralados']},
- {id:'polimento',t:'Polimento com e sem proteção',s:'Tira riscos finos, manchas e o fosco',img:'s-polimento',w:900,h:900,d:'Correção da pintura com máquina e produto certo para cada caso, devolvendo o reflexo de espelho. Com proteção, a pintura ganha uma camada extra que segura o brilho por muito mais tempo.',tags:['Sem proteção','Com proteção','Cristalização de pintura']},
+ {id:'polimento',t:'Polimento com e sem proteção',s:'Tira riscos finos, manchas e o fosco',img:'s-polimento',w:900,h:900,d:'Correção da pintura com máquina e produto certo para cada caso, devolvendo o reflexo de espelho. Com proteção (cristalização ou vitrificação de pintura), o brilho fica protegido de 1 a 3 anos.',tags:['Sem proteção','Com proteção','Cristalização de pintura','Vitrificação de pintura'],price:[['1 a 3 anos','de proteção']]},
  {id:'motor',t:'Limpeza técnica de motor',s:'Cofre limpo, sem risco para a parte elétrica',img:'s-motor',w:900,h:675,d:'Limpeza feita com técnica e produto próprio para o motor. Ideal depois de viagem longa ou antes de vender o carro.',tags:['Limpeza técnica','Proteção de plásticos','Antes de vender']},
  {id:'parabrisa',t:'Cristalização do para-brisa',s:'Mais visibilidade na chuva',img:'s-parabrisa',w:900,h:675,d:'Descontaminação e cristalização do vidro: a chuva escorre sozinha, você enxerga melhor à noite e as palhetas duram mais.',tags:['Super hidrofóbico','Menos desgaste das palhetas','Canaletas limpas e lubrificadas'],price:[['R$ 95','investimento divulgado'],['40 min','de trabalho'],['até 6 meses','de proteção']]},
  {id:'farois',t:'Polimento dos faróis e lanternas',s:'Farol amarelado de volta ao novo',img:'s-farois',w:900,h:675,d:'Faróis e lanternas voltam a ter aspecto de novo e a luz ilumina melhor à noite. Um dos serviços com melhor custo-benefício para valorizar o carro.',tags:['Aspecto de novo','Mais luminosidade','Faróis e lanternas']},
  {id:'plasticos',t:'Vitrificação dos plásticos externos',s:'Preto profundo em para-choques e molduras',img:'s-plasticos',w:900,h:900,d:'Para-choques, grades, retrovisores e molduras desbotados recuperam o preto profundo e ganham proteção contra sol e chuva.',tags:['Para-choques','Grades e molduras','Proteção contra o sol']},
- {id:'leilao',t:'Restauração de carros de leilão',s:'Do pátio do leilão para a sua garagem',img:'s-leilao',w:900,h:900,d:'Carro arrematado em leilão chega sujo, opaco e com cheiro de pátio. Aqui ele passa por uma restauração estética completa, por dentro, por fora e no motor, e sai valorizado.',tags:['Restauração completa','Motor, interior e pintura','Valoriza na revenda'],more:true},
- {id:'frota',t:'Descaracterização de frota',s:'Carros de empresa prontos para revenda',img:'s-frota',w:900,h:900,d:'Remoção de adesivos, faixas e marcas da empresa, com acabamento na pintura para o carro voltar a parecer de particular e valer mais na revenda.',tags:['Remoção de adesivos','Acabamento na pintura','Atendemos empresas']},
+ {id:'leilao',t:'Restauração de carros de leilão',s:'Do pátio do leilão para a sua garagem',img:'s-leilao',w:900,h:506,d:'Carro arrematado em leilão chega sujo, opaco e com cheiro de pátio. Aqui ele passa por uma restauração estética completa, por dentro, por fora e no motor, e sai valorizado.',tags:['Restauração completa','Motor, interior e pintura','Valoriza na revenda'],more:true},
+ {id:'frota',t:'Descaracterização de frota',s:'Carros de empresa prontos para revenda',img:'s-frota',w:900,h:792,d:'Remoção de adesivos, faixas e marcas da empresa, com acabamento na pintura para o carro voltar a parecer de particular e valer mais na revenda. Na foto, um Uno de frota antes e depois aqui no studio.',tags:['Remoção de adesivos','Acabamento na pintura','Atendemos empresas'],ba:true},
  {id:'rodas',t:'Limpeza avançada de rodas, caixas de roda e suspensão',s:'O detalhe que quase ninguém limpa',img:'s-rodas',w:900,h:989,d:'Rodas, caixas de roda e suspensão limpas a fundo, sem o barro e a fuligem de freio acumulados. O carro fica impecável até onde quase ninguém olha.',tags:['Rodas','Caixas de roda','Suspensão']},
 ];
 const list=$('#svcList'),panel=$('#svcPanel');const mq=matchMedia('(max-width:900px)');let cur=0;
 list.innerHTML=SVC.map((s,i)=>'<li class="svc-item" data-i="'+i+'"><button class="svc-btn" aria-expanded="false"><span><span class="t">'+s.t+'</span><span class="s">'+s.s+'</span></span><span class="ar">'+ico.arrow+'</span></button></li>').join('');
-function panelHTML(s){return '<div class="ph"><img src="img/'+s.img+'.webp" width="'+s.w+'" height="'+s.h+'" alt="'+s.t+' no Studio Reverse" decoding="async"></div><div class="bd swap"><h3>'+s.t+'</h3><p>'+s.d+'</p><div class="tags">'+s.tags.map(t=>'<span>'+t+'</span>').join('')+'</div>'+(s.price?'<div class="price num">'+s.price.map(p=>'<span><b>'+p[0]+'</b>'+p[1]+'</span>').join('')+'</div>':'')+(s.more?'<div class="row2"><a class="btn btn-red" href="#leilao">Ver como funciona</a><a class="btn btn-ghost" href="#agendar" data-pick="'+s.id+'">Orçamento</a></div>':'<a class="btn btn-red" href="#agendar" data-pick="'+s.id+'">Quero orçamento deste</a>')+'</div>'}
+function panelHTML(s){return '<div class="ph"><img src="img/'+s.img+'.webp" width="'+s.w+'" height="'+s.h+'" alt="'+s.t+' no Studio Reverse" decoding="async"></div><div class="bd swap"><h3>'+s.t+'</h3><p>'+s.d+'</p><div class="tags">'+s.tags.map(t=>'<span>'+t+'</span>').join('')+'</div>'+(s.price?'<div class="price num">'+s.price.map(p=>'<span><b>'+p[0]+'</b>'+p[1]+'</span>').join('')+'</div>':'')+(s.ba?'<div class="row2"><a class="btn btn-red" href="#antes-depois" data-ba="frota">Ver antes e depois</a><a class="btn btn-ghost" href="#agendar" data-pick="'+s.id+'">Orçamento</a></div>':s.more?'<div class="row2"><a class="btn btn-red" href="#leilao">Ver como funciona</a><a class="btn btn-ghost" href="#agendar" data-pick="'+s.id+'">Orçamento</a></div>':'<a class="btn btn-red" href="#agendar" data-pick="'+s.id+'">Quero orçamento deste</a>')+'</div>'}
 function openSvc(i,scroll){cur=i;const s=SVC[i];
   list.querySelectorAll('.svc-item').forEach((li,k)=>{li.classList.toggle('on',k===i);li.querySelector('button').setAttribute('aria-expanded',k===i)});
   panel.innerHTML=panelHTML(s);
@@ -669,6 +674,7 @@ const sp=new Image();SVC.forEach(s=>{const im=new Image();im.src='img/'+s.img+'.
 
 /* ---------- before / after ---------- */
 const BA=[
+ {k:'frota',t:'Frota adesivada',n:'Descaracterização de frota: o Uno chegou adesivado da empresa e saiu prata, sem marca nenhuma, pronto pra revenda.',w:462,h:870},
  {k:'parachoque',t:'Para-choque ralado',n:'Micropintura: o para-choque ralado recuperado sem trocar a peça e sem perder a pintura original.',w:700,h:931},
  {k:'farol',t:'Faróis',n:'Farol opaco e amarelado de volta à transparência.',w:799,h:660},
  {k:'polimento',t:'Polimento',n:'Polimento técnico: o reflexo da luz mostra a pintura sem marcas.',w:700,h:934},
@@ -690,6 +696,8 @@ addEventListener('resize',()=>sizeBA(BA[curBA]));setBA(0);
 BA.forEach(b=>{new Image().src='img/ba-'+b.k+'-antes.webp';new Image().src='img/ba-'+b.k+'-depois.webp'});
 // demo swipe when visible
 new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting&&!reduce){o.disconnect();let t0=null;const f=ts=>{if(!t0)t0=ts;const k=(ts-t0)/1800;if(k>=1){setX(50);return}setX(50+Math.sin(k*Math.PI*2)*28);requestAnimationFrame(f)};setTimeout(()=>requestAnimationFrame(f),500)}})},{threshold:.6}).observe(ba);
+
+document.addEventListener('click',e=>{const a=e.target.closest('[data-ba]');if(!a)return;const i=BA.findIndex(b=>b.k===a.dataset.ba);if(i>-1)setBA(i)});
 
 /* ---------- gallery ---------- */
 const CARS=[['c-mercedes','Mercedes-Benz Classe C',820,615],['c-cayenne','Porsche Cayenne',820,615],['c-bmw-azul','BMW Série 3',820,615],['c-tcross','Volkswagen T-Cross',820,657],['c-kicks','Nissan Kicks',820,800],['c-corolla','Toyota Corolla',820,615],['c-mercedes-lateral','Mercedes-Benz',820,615],['c-creta','Hyundai Creta',820,734],['c-bmw-branca','BMW Série 3',820,814],['c-picanto','Kia Picanto',820,637],['c-fiesta','Ford Fiesta',820,615],['c-spin','Chevrolet Spin',820,633]];
@@ -739,22 +747,15 @@ document.querySelectorAll('.ticker').forEach(tk=>{const row=tk.firstElementChild
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo'}).format(new Date());
 const BK=['Lavagem Gold','Lavagem Platinum','Higienização interna','Preparação para venda','Micropintura','Polimento','Polimento com proteção','Motor','Para-brisa','Faróis e lanternas','Plásticos externos','Carro de leilão','Frota de empresa','Rodas e suspensão'];
 const MAPID={lavagem:'Lavagem Gold',higienizacao:'Higienização interna',venda:'Preparação para venda',micropintura:'Micropintura',polimento:'Polimento',motor:'Motor',parabrisa:'Para-brisa',farois:'Faróis e lanternas',plasticos:'Plásticos externos',leilao:'Carro de leilão',frota:'Frota de empresa',rodas:'Rodas e suspensão'};
-const sel=new Set();let day=null,per=null;
+const sel=new Set();
 $('#bkSvc').innerHTML=BK.map(s=>'<button class="chip" aria-pressed="false" data-v="'+s+'">'+s+'</button>').join('');
-// próximos dias úteis
-(function(){const out=[];const base=new Date(today()+'T12:00:00');for(let i=0;out.length<5&&i<14;i++){const dt=new Date(base);dt.setDate(base.getDate()+i);const wd=dt.getDay();if(!OPEN[wd])continue;if(i===0&&spNow().m>=OPEN[wd][1]-60)continue;
-  const lab=(i===0?'Hoje':i===1?'Amanhã':DN[wd].slice(0,3))+' '+String(dt.getDate()).padStart(2,'0')+'/'+String(dt.getMonth()+1).padStart(2,'0');out.push(lab)}
-  out.push('A combinar');$('#bkDay').innerHTML=out.map(l=>'<button class="chip" aria-pressed="false" data-v="'+l+'">'+l+'</button>').join('')})();
-$('#bkPer').innerHTML=['Manhã','Tarde','Tanto faz'].map(l=>'<button class="chip" aria-pressed="false" data-v="'+l+'">'+l+'</button>').join('');
-function upd(){const name=$('#bkName').value.trim(),car=$('#bkCar').value.trim();
+function upd(){const name=$('#bkName').value.trim(),car=[$('#bkCar').value.trim(),$('#bkYear').value.trim(),$('#bkColor').value.trim()].filter(Boolean).join(' · ');
   let m='Olá Mário! '+(name?'Aqui é '+name+'. ':'')+'Vim pelo site e quero agendar.';
   m+='\n\nServiço: '+(sel.size?[...sel].join(', '):'quero uma avaliação');
-  if(car)m+='\nCarro: '+car;if(day)m+='\nDia: '+day;if(per)m+='\nPeríodo: '+per;
+  if(car)m+='\nCarro: '+car;m+='\n\nPode me passar o valor e os horários disponíveis?';
   $('#bkPrev').innerHTML='<small>SUA MENSAGEM</small>'+m.replace(/</g,'&lt;');$('#bkGo').href='https://wa.me/'+WA+'?text='+encodeURIComponent(m)}
 $('#bkSvc').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;const v=c.dataset.v;sel.has(v)?sel.delete(v):sel.add(v);c.setAttribute('aria-pressed',sel.has(v));upd()});
-function single(box,setter){box.addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;const on=c.getAttribute('aria-pressed')!=='true';box.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed','false'));c.setAttribute('aria-pressed',on);setter(on?c.dataset.v:null);upd()})}
-single($('#bkDay'),v=>day=v);single($('#bkPer'),v=>per=v);
-['#bkName','#bkCar'].forEach(s=>$(s).addEventListener('input',upd));upd();
+['#bkName','#bkCar','#bkYear','#bkColor'].forEach(s=>$(s).addEventListener('input',upd));upd();
 document.addEventListener('click',e=>{const a=e.target.closest('[data-pick]');if(!a)return;const v=MAPID[a.dataset.pick];if(v&&!sel.has(v)){sel.add(v);$('#bkSvc [data-v="'+v+'"]').setAttribute('aria-pressed','true');upd()}});
 
 /* ---------- copy phone ---------- */
