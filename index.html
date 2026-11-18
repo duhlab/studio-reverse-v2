@@ -614,11 +614,7 @@ footer a{color:var(--silver)}
       </article>
       <article class="v-info rv">
         <div class="status num" data-status style="margin:0"><span class="dot"></span><span data-status-text>…</span></div>
-        <div class="week num" id="week" aria-label="Dias de funcionamento"></div>
-        <div class="v-hours num">
-          <div><span>Segunda a sexta</span><b>08h30 às 18h</b></div>
-          <div><span>Sábado e domingo</span><b class="off">Fechado</b></div>
-        </div>
+        <table class="hours num" id="hours" style="margin-top:0"></table>
         <div class="v-phone">
           <div><span id="ph" class="num">(11) 91268-3452</span><small>WhatsApp e ligação</small></div>
           <button class="v-copy" id="copy" aria-label="Copiar número"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>Copiar</span></button>
@@ -668,7 +664,7 @@ function status(){const {d,m}=spNow();const t=OPEN[d];
 }
 function paintStatus(){const s=status();document.querySelectorAll('[data-status]').forEach(el=>{el.classList.toggle('is-open',s.open);el.classList.toggle('is-closed',!s.open);el.querySelector('[data-status-text]').innerHTML=s.txt});
   const {d}=spNow();const order=[1,2,3,4,5,6,0];
-  const wk=document.getElementById('week');if(wk)wk.innerHTML=order.map(i=>'<span class="'+(OPEN[i]?'':'off ')+(i===d?'today':'')+'"'+(i===d?' aria-current="date"':'')+'>'+DN[i].slice(0,3)+(i===d?'<i>HOJE</i>':'')+'</span>').join('')}
+  $('#hours').innerHTML=order.map(i=>{const t=OPEN[i];return '<tr class="'+(i===d?'today':'')+'"><td>'+DN[i]+(i===d?'<span class="tag">HOJE</span>':'')+'</td><td class="'+(t?'':'closed')+'">'+(t?'08h30 às 18h':'Fechado')+'</td></tr>'}).join('')}
 paintStatus();setInterval(paintStatus,30000);
 
 /* ---------- hero: LED ceiling ---------- */
