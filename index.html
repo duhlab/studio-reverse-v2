@@ -194,7 +194,9 @@ section{position:relative}
 .lei-list li{display:flex;gap:10px;font-weight:400;font-size:15.5px;line-height:1.4}
 .lei-list svg{width:20px;height:20px;flex:none;margin-top:1px;background:#0b0b0c;color:#ffd400;border-radius:6px;padding:3px}
 .lei-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:34px}
-.lei-cta span{font-size:14.5px;max-width:34ch;color:#2b2716;font-weight:400}
+.lei-cta span{font-size:17px;color:#0b0b0c;font-weight:500;width:100%}
+.lei-copy > p.lei-lead{margin-top:16px;font-weight:500;color:#0b0b0c}
+.lei-h3{margin-top:28px;font:800 1.35rem/1.1 var(--display);font-stretch:116%;color:#0b0b0c;letter-spacing:-.01em}
 .btn-black{--h:60px;padding:0 30px;background:#0b0b0c;color:#ffd400;font-size:16.5px;font-weight:500;box-shadow:0 18px 34px -16px rgba(0,0,0,.65)}
 .btn-black::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,212,0,.35) 48%,transparent 62%);transform:translateX(-120%);animation:shine 3.2s var(--ease) infinite;z-index:-1}
 @keyframes shine{0%,55%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
@@ -202,10 +204,11 @@ section{position:relative}
 .lei-photo{position:relative;transform:rotate(2deg);background:#0b0b0c;padding:12px 12px 0;border-radius:18px;box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
 .lei-photo img{border-radius:10px;width:100%}
 .lei-photo figcaption{color:#ffd400;font-size:13.5px;padding:12px 4px 14px;letter-spacing:.02em}
-.lei-steps{list-style:none;margin-top:26px;display:grid;gap:10px}
-.lei-steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:14px 16px;background:rgba(11,11,12,.92);color:#e9e9ea;border-radius:14px;font-size:14.5px}
+.lei-steps{list-style:none;margin-top:14px;display:grid;gap:10px}
+.lei-steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:14px 16px;background:rgba(11,11,12,.92);color:#e9e9ea;border-radius:14px;font-size:14.5px}
 .lei-steps b{width:44px;height:44px;border-radius:12px;background:#ffd400;color:#0b0b0c;display:grid;place-items:center;font:800 1.25rem var(--display)}
-.lei-steps strong{display:block;color:#fff;font-weight:500;font-size:15.5px}
+.lei-steps strong{display:block;color:#fff;font-weight:500;font-size:15.5px;margin-bottom:2px}
+.lei-steps span{line-height:1.45}
 .leilao .rv:not(.in){filter:none}
 @media (max-width:900px){.lei-grid{grid-template-columns:1fr}.lei-list{grid-template-columns:1fr}.lei-photo{transform:rotate(1deg)}}
 
@@ -370,9 +373,9 @@ footer a{color:var(--silver)}
   <div class="wrap">
     <a href="#topo" aria-label="Studio Reverse, início"><img class="logo" src="img/logo.webp" width="440" height="121" alt="Reverse Estética Automotiva"></a>
     <nav class="nav-links" aria-label="Seções">
-      <a href="#servicos">Serviços</a><a href="#leilao">Carros de leilão</a><a href="#antes-depois">Antes e depois</a><a href="#trabalhos">Trabalhos</a><a href="#studio">O studio</a><a href="#agendar">Agendar</a>
+      <a href="#servicos">Serviços</a><a href="#leilao">Carros de leilão</a><a href="#antes-depois">Antes e depois</a><a href="#trabalhos">Trabalhos</a><a href="#studio">O studio</a><a href="#agendar">Contato</a>
     </nav>
-    <a class="btn btn-red btn-sm" href="#agendar">Agendar horário</a>
+    <a class="btn btn-red btn-sm" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">Agendar horário</a>
   </div>
 </header>
 
@@ -385,7 +388,7 @@ footer a{color:var(--silver)}
       <h1><span><span class="r">Excelência</span> em cada detalhe</span><span><span class="r">Transformação</span> que você vê</span><span><span class="r">Qualidade</span> que você percebe</span></h1>
       <p class="lead">Um novo conceito em estética automotiva, cada detalhe faz a diferença. Venha se surpreender!</p>
       <div class="cta-row">
-        <a class="btn btn-red" href="#agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>Agendar meu horário</a>
+        <a class="btn btn-red" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>Agendar meu horário</a>
         <a class="btn btn-ghost" href="#servicos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3l2.2 5.6L20 9.3l-4.5 3.8L17 19l-5-3.2L7 19l1.5-5.9L4 9.3l5.8-.7z"/></svg>Ver serviços</a>
       </div>
       <div class="proofs">
@@ -426,21 +429,24 @@ footer a{color:var(--silver)}
   <div class="lei-bg" aria-hidden="true">LEILÃO</div>
   <div class="wrap lei-grid">
     <div class="lei-copy rv">
-      <span class="lei-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5l6 6M12 6l6 6M4 20l7.5-7.5M9.5 8.5l6 6-3 3-6-6z"/></svg>Restauração de carros de leilão</span>
-      <h2>Comprou no leilão?<br>A gente devolve o <em>orgulho</em> do carro.</h2>
-      <p>Carro de leilão chega judiado: sujo, opaco, com riscos e cheiro de pátio. Aqui ele passa por uma restauração estética completa, por dentro, por fora e no motor. Você economizou na compra, agora é hora de ter um carro de dar orgulho, pra rodar ou pra revender valendo mais.</p>
+      <span class="lei-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5l6 6M12 6l6 6M4 20l7.5-7.5M9.5 8.5l6 6-3 3-6-6z"/></svg>Serviço especializado</span>
+      <h2>Carros de <em>leilão</em></h2>
+      <p>Os carros adquiridos em leilão apresentam diversas avarias, limpeza interna e externa comprometida e falta de brilho pelo tempo exposto no pátio.</p>
+      <p class="lei-lead">Na <strong>REVERSE</strong> ele passa por uma restauração estética completa:</p>
       <ul class="lei-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Lavagem detalhada completa, de cima a baixo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Higienização interna avançada: some o cheiro de pátio</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Limpeza técnica de motor</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Polimento com proteção: a pintura volta a brilhar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Micropintura em riscos e ralados</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Faróis e lanternas sem amarelado</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Plásticos externos vitrificados, preto de novo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>Rodas, caixas de roda e suspensão limpas a fundo</span></li></ul>
       <div class="lei-cta">
-        <a class="btn btn-black" target="_blank" rel="noopener" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Comprei%20um%20carro%20de%20leil%C3%A3o%20e%20quero%20fazer%20a%20restaura%C3%A7%C3%A3o%20com%20voc%C3%AAs.%20Posso%20mandar%20as%20fotos%3F"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Quero restaurar meu carro</a>
-        <span>Mande as fotos do carro no WhatsApp e o Mário te diz o que dá pra fazer.</span>
+        <span>Para mais informações, entre em contato</span>
+        <a class="btn btn-black" target="_blank" rel="noopener" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Vim%20pelo%20site%20e%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20restaura%C3%A7%C3%A3o%20de%20carro%20de%20leil%C3%A3o."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Falar no WhatsApp</a>
       </div>
     </div>
     <div class="lei-side rv">
       <figure class="lei-photo"><img src="img/leilao.webp" width="1200" height="675" alt="Carro preto ao fundo e martelo de leilão em primeiro plano" loading="lazy" decoding="async" class="fade"><figcaption>Arrematou? Traz pra Reverse.</figcaption></figure>
+      <h3 class="lei-h3">Condições gerais</h3>
       <ol class="lei-steps">
-        <li><b>1</b><span><strong>Chega do pátio</strong>Do jeito que veio: sujo, opaco e com cheiro.</span></li>
-        <li><b>2</b><span><strong>Restauração completa</strong>Dentro, fora, motor, faróis, plásticos e rodas.</span></li>
-        <li><b>3</b><span><strong>Sai valorizado</strong>Pronto pra rodar com orgulho ou revender melhor.</span></li>
+        <li><b>1</b><span><strong>Avaliação</strong>Identificamos as condições da pintura, interior, rodas, plásticos e demais áreas a serem tratadas.</span></li>
+        <li><b>2</b><span><strong>Diagnóstico e valor</strong>Definimos quais procedimentos serão necessários para propor o valor do investimento justo e adequado à situação atual do veículo.</span></li>
+        <li><b>3</b><span><strong>Execução</strong>Realizamos os serviços escolhidos com atenção aos detalhes definidos no projeto.</span></li>
+        <li><b>4</b><span><strong>Acabamento e entrega</strong>Fazemos a conferência final para garantir que o veículo seja entregue dentro do padrão combinado.</span></li>
       </ol>
     </div>
   </div>
@@ -452,7 +458,7 @@ footer a{color:var(--silver)}
   <div class="wrap ba-wrap">
     <div class="rv">
       <h2>Arraste e veja a diferença.</h2>
-      <p class="lead" style="margin-top:18px">Fotos reais de carros que passaram pelo studio. Sem filtro, só técnica.</p>
+      <p class="lead" style="margin-top:18px">Fotos reais de carros que passaram pelo studio REVERSE. Sem filtro ou IA.</p>
       <div class="ba-tabs" id="baTabs" role="group" aria-label="Escolha o serviço"></div>
       <p class="ba-note" id="baNote"></p>
     </div>
@@ -468,8 +474,8 @@ footer a{color:var(--silver)}
 <section class="sec" id="trabalhos" style="padding-bottom:clamp(50px,6vw,80px)">
   <div class="wrap gal-top rv">
     <div class="sec-head" style="margin:0">
-      <h2>Saídos do studio.</h2>
-      <p class="lead">Do popular ao importado, cada carro recebe o mesmo cuidado.</p>
+      <h2>Trabalhos realizados</h2>
+      <p class="lead">Do popular ao importado, cada carro recebe a mesma atenção e cuidado.</p>
     </div>
     <div class="arrows"><button class="arrow" id="prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button><button class="arrow" id="next" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
   </div>
@@ -553,25 +559,14 @@ footer a{color:var(--silver)}
   </div>
 </section>
 
-<!-- AGENDAR -->
+<!-- CONTATO -->
 <section class="sec" id="agendar" style="padding-top:20px">
   <div class="wrap">
     <div class="sec-head rv">
-      <h2>Monte seu pedido e mande pronto.</h2>
-      <p class="lead">Escolha o serviço, diga qual é o carro e a mensagem sai organizada no WhatsApp do Mário. Ele te responde com o valor e os horários livres na agenda.</p>
+      <h2>Venha conhecer o studio.</h2>
+      <p class="lead">Trabalhamos somente com agendamento. Chame no WhatsApp e o Mário combina com você o melhor horário.</p>
     </div>
     <div class="book">
-      <div class="panel rv">
-        <div class="field" style="margin-top:0"><span>O que seu carro precisa? (pode escolher mais de um)</span><div class="chips" id="bkSvc"></div></div>
-        <div class="car3">
-          <div class="field"><span>Modelo do carro</span><input type="text" id="bkCar" placeholder="Ex.: Corolla" autocomplete="off"></div>
-          <div class="field"><span>Ano</span><input type="text" id="bkYear" placeholder="Ex.: 2019" inputmode="numeric" maxlength="4" autocomplete="off"></div>
-          <div class="field"><span>Cor</span><input type="text" id="bkColor" placeholder="Ex.: prata" autocomplete="off"></div>
-        </div>
-        <div class="field"><span>Seu nome</span><input type="text" id="bkName" placeholder="Como o Mário te chama?" autocomplete="given-name"></div>
-        <div class="preview" id="bkPrev"></div>
-        <a class="btn btn-wa" id="bkGo" style="margin-top:18px;width:100%" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Enviar pedido no WhatsApp</a>
-      </div>
       <div class="panel place rv">
         <div class="status num" data-status style="margin:0"><span class="dot"></span><span data-status-text>…</span></div>
         <div class="addr">R. Codajás, 97 · Vila Formosa<small>São Paulo, SP · CEP 03359-040</small></div>
@@ -579,10 +574,14 @@ footer a{color:var(--silver)}
           <a class="btn btn-red btn-sm" href="https://waze.com/ul?ll=-23.56874,-46.5480534&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 15.5C3.6 14.6 3 13 3 11a8 8 0 0 1 16 0c0 3.4-2.3 5.8-5.6 6.3l-3.8.1"/><circle cx="8" cy="18.5" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/><path d="M9.5 10h.01M14.5 10h.01M9.5 13.2c1.3 1 3.7 1 5 0"/></svg>Ir pelo Waze</a>
           <a class="btn btn-ghost btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=-23.56874,-46.5480534" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Google Maps</a>
         </div>
-        <div class="im"><img src="img/fachada.webp" width="1200" height="900" alt="Fachada do Studio Reverse na Rua Codajás, 97, com o portão e o banner da marca" loading="lazy" decoding="async" class="fade"><span>Procure o banner da Reverse no portão</span></div>
-        <a class="map" href="https://www.google.com/maps/search/?api=1&query=STUDIO%20REVERSE%20Est%C3%A9tica%20Automotiva%20R.%20Codaj%C3%A1s%2097" target="_blank" rel="noopener" aria-label="Abrir localização no Google Maps"><canvas id="map"></canvas><b>Abrir no mapa</b></a>
         <table class="hours num" id="hours"></table>
         <div class="phone"><div><span id="ph">(11) 91268-3452</span><small>WhatsApp e ligação</small></div><button class="btn btn-ghost btn-sm" id="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Copiar</button></div>
+        <a class="btn btn-wa" style="margin-top:18px;width:100%" target="_blank" rel="noopener" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Agendar pelo WhatsApp</a>
+      </div>
+      <div class="panel place rv" style="padding:clamp(14px,2vw,20px)">
+        <div class="im" style="margin-top:0"><img src="img/fachada.webp" width="1200" height="900" alt="Fachada do Studio Reverse na Rua Codajás, 97, com o portão e o banner da marca" loading="lazy" decoding="async" class="fade"><span>Procure o banner da Reverse no portão</span></div>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=STUDIO%20REVERSE%20Est%C3%A9tica%20Automotiva%20R.%20Codaj%C3%A1s%2097" target="_blank" rel="noopener" aria-label="Abrir localização no Google Maps"><canvas id="map"></canvas><b>Abrir no mapa</b></a>
+        
       </div>
     </div>
   </div>
@@ -661,7 +660,8 @@ const SVC=[
 ];
 const list=$('#svcList'),panel=$('#svcPanel');const mq=matchMedia('(max-width:900px)');let cur=0;
 list.innerHTML=SVC.map((s,i)=>'<li class="svc-item" data-i="'+i+'"><button class="svc-btn" aria-expanded="false"><span><span class="t">'+s.t+'</span><span class="s">'+s.s+'</span></span><span class="ar">'+ico.arrow+'</span></button></li>').join('');
-function panelHTML(s){return '<div class="ph"><img src="img/'+s.img+'.webp" width="'+s.w+'" height="'+s.h+'" alt="'+s.t+' no Studio Reverse" decoding="async"></div><div class="bd swap"><h3>'+s.t+'</h3><p>'+s.d+'</p><div class="tags">'+s.tags.map(t=>'<span>'+t+'</span>').join('')+'</div>'+(s.price?'<div class="price num">'+s.price.map(p=>'<span><b>'+p[0]+'</b>'+p[1]+'</span>').join('')+'</div>':'')+(s.ba?'<div class="row2"><a class="btn btn-red" href="#antes-depois" data-ba="frota">Ver antes e depois</a><a class="btn btn-ghost" href="#agendar" data-pick="'+s.id+'">Orçamento</a></div>':s.more?'<div class="row2"><a class="btn btn-red" href="#leilao">Ver como funciona</a><a class="btn btn-ghost" href="#agendar" data-pick="'+s.id+'">Orçamento</a></div>':'<a class="btn btn-red" href="#agendar" data-pick="'+s.id+'">Quero orçamento deste</a>')+'</div>'}
+const waLink=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent('Olá Mário! Vim pelo site e quero um orçamento de '+t.toLowerCase()+'.');
+function panelHTML(s){return '<div class="ph"><img src="img/'+s.img+'.webp" width="'+s.w+'" height="'+s.h+'" alt="'+s.t+' no Studio Reverse" decoding="async"></div><div class="bd swap"><h3>'+s.t+'</h3><p>'+s.d+'</p><div class="tags">'+s.tags.map(t=>'<span>'+t+'</span>').join('')+'</div>'+(s.price?'<div class="price num">'+s.price.map(p=>'<span><b>'+p[0]+'</b>'+p[1]+'</span>').join('')+'</div>':'')+(s.ba?'<div class="row2"><a class="btn btn-red" href="#antes-depois" data-ba="frota">Ver antes e depois</a><a class="btn btn-ghost" target="_blank" rel="noopener" href="'+waLink(s.t)+'">Orçamento</a></div>':s.more?'<div class="row2"><a class="btn btn-red" href="#leilao">Ver como funciona</a><a class="btn btn-ghost" target="_blank" rel="noopener" href="'+waLink(s.t)+'">Orçamento</a></div>':'<a class="btn btn-red" target="_blank" rel="noopener" href="'+waLink(s.t)+'">Quero orçamento deste</a>')+'</div>'}
 function openSvc(i,scroll){cur=i;const s=SVC[i];
   list.querySelectorAll('.svc-item').forEach((li,k)=>{li.classList.toggle('on',k===i);li.querySelector('button').setAttribute('aria-expanded',k===i)});
   panel.innerHTML=panelHTML(s);
@@ -674,11 +674,11 @@ const sp=new Image();SVC.forEach(s=>{const im=new Image();im.src='img/'+s.img+'.
 
 /* ---------- before / after ---------- */
 const BA=[
- {k:'frota',t:'Frota adesivada',n:'Descaracterização de frota: o Uno chegou adesivado da empresa e saiu prata, sem marca nenhuma, pronto pra revenda.',w:462,h:870},
+ {k:'frota',t:'Frota adesivada',n:'Descaracterização de frota: o Uno chegou adesivado da empresa e saiu pronto pra revenda.',w:462,h:870},
  {k:'parachoque',t:'Para-choque ralado',n:'Micropintura: o para-choque ralado recuperado sem trocar a peça e sem perder a pintura original.',w:700,h:931},
  {k:'farol',t:'Faróis',n:'Farol opaco e amarelado de volta à transparência.',w:799,h:660},
  {k:'polimento',t:'Polimento',n:'Polimento técnico: o reflexo da luz mostra a pintura sem marcas.',w:700,h:934},
- {k:'motor',t:'Motor',n:'Limpeza técnica de motor: do pó ao cofre de concessionária.',w:1100,h:339},
+ {k:'motor',t:'Motor',n:'Limpeza técnica de motor com segurança e proteção.',w:1100,h:339},
 ];
 const ba=$('#ba'),bImg=ba.querySelector('.before'),aImg=ba.querySelector('.after');
 $('#baTabs').innerHTML=BA.map((b,i)=>'<button class="chip" aria-pressed="'+(i===0)+'" data-i="'+i+'">'+b.t+'</button>').join('');
@@ -742,21 +742,6 @@ document.querySelectorAll('.ticker').forEach(tk=>{const row=tk.firstElementChild
   new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(tk);
   const loop=ts=>{const dt=Math.min(50,ts-(last||ts));last=ts;const w=row.scrollWidth/2;if(x===null)x=-w;
     if(vis&&!paused&&!reduce){x-=dir*dt*.035;if(x<=-w)x+=w;if(x>0)x-=w}row.style.transform='translate3d('+x+'px,0,0)';requestAnimationFrame(loop)};requestAnimationFrame(loop)});
-
-/* ---------- booking builder ---------- */
-const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo'}).format(new Date());
-const BK=['Lavagem Gold','Lavagem Platinum','Higienização interna','Preparação para venda','Micropintura','Polimento','Polimento com proteção','Motor','Para-brisa','Faróis e lanternas','Plásticos externos','Carro de leilão','Frota de empresa','Rodas e suspensão'];
-const MAPID={lavagem:'Lavagem Gold',higienizacao:'Higienização interna',venda:'Preparação para venda',micropintura:'Micropintura',polimento:'Polimento',motor:'Motor',parabrisa:'Para-brisa',farois:'Faróis e lanternas',plasticos:'Plásticos externos',leilao:'Carro de leilão',frota:'Frota de empresa',rodas:'Rodas e suspensão'};
-const sel=new Set();
-$('#bkSvc').innerHTML=BK.map(s=>'<button class="chip" aria-pressed="false" data-v="'+s+'">'+s+'</button>').join('');
-function upd(){const name=$('#bkName').value.trim(),car=[$('#bkCar').value.trim(),$('#bkYear').value.trim(),$('#bkColor').value.trim()].filter(Boolean).join(' · ');
-  let m='Olá Mário! '+(name?'Aqui é '+name+'. ':'')+'Vim pelo site e quero agendar.';
-  m+='\n\nServiço: '+(sel.size?[...sel].join(', '):'quero uma avaliação');
-  if(car)m+='\nCarro: '+car;m+='\n\nPode me passar o valor e os horários disponíveis?';
-  $('#bkPrev').innerHTML='<small>SUA MENSAGEM</small>'+m.replace(/</g,'&lt;');$('#bkGo').href='https://wa.me/'+WA+'?text='+encodeURIComponent(m)}
-$('#bkSvc').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;const v=c.dataset.v;sel.has(v)?sel.delete(v):sel.add(v);c.setAttribute('aria-pressed',sel.has(v));upd()});
-['#bkName','#bkCar','#bkYear','#bkColor'].forEach(s=>$(s).addEventListener('input',upd));upd();
-document.addEventListener('click',e=>{const a=e.target.closest('[data-pick]');if(!a)return;const v=MAPID[a.dataset.pick];if(v&&!sel.has(v)){sel.add(v);$('#bkSvc [data-v="'+v+'"]').setAttribute('aria-pressed','true');upd()}});
 
 /* ---------- copy phone ---------- */
 const toast=$('#toast');$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText('11912683452')}catch(e){const r=document.createRange();r.selectNodeContents($('#ph'));getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy')}toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)};
