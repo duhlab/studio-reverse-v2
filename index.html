@@ -341,6 +341,40 @@ input::placeholder{color:#6f7177}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media (max-width:900px){.book{grid-template-columns:1fr}}
 
+
+/* ---------- visita ---------- */
+.visit{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:18px;align-items:stretch}
+.v-place,.v-info{background:var(--ink-2);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.v-photo img{width:100%}
+.v-addr{display:flex;gap:14px;align-items:flex-start;padding:22px 24px 4px}
+.v-pin{width:42px;height:42px;border-radius:12px;background:var(--grad);color:#111;display:grid;place-items:center;flex:none}
+.v-pin svg{width:21px;height:21px}
+.v-addr b{display:block;font-weight:500;font-size:17px}
+.v-addr small{display:block;color:var(--mist);font-size:14px;margin-top:3px}
+.v-go{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:18px 24px 24px}
+.v-go .btn{width:100%;padding:0 14px}
+.v-info{padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:22px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.week span{display:grid;place-items:center;align-content:center;gap:3px;min-height:52px;padding:8px 0;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:12.5px;color:var(--silver);line-height:1}
+.week span i{font-style:normal;font-size:10px;letter-spacing:.06em;color:var(--mist)}
+.week span.off{color:#5f6166;background:transparent;text-decoration:line-through;text-decoration-color:rgba(255,255,255,.18)}
+.week span.off i{color:#55575c}
+.week span.today{background:var(--grad);border-color:transparent;color:#111;font-weight:500}
+.week span.today i{color:#111;font-weight:500}
+.v-hours{display:grid;gap:0;border-top:1px solid var(--line)}
+.v-hours div{display:flex;justify-content:space-between;gap:12px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--silver)}
+.v-hours b{font-weight:500;color:#fff}
+.v-hours b.off{color:var(--mist);font-weight:400}
+.v-phone{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.v-phone #ph{font:600 1.3rem var(--display);font-stretch:110%;user-select:all;white-space:nowrap}
+.v-phone small{display:block;color:var(--mist);font-size:13px}
+.v-copy{display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line-2);color:var(--silver);font-size:14px;transition:all .3s var(--ease)}
+.v-copy:hover{background:#fff;color:var(--ink)}
+.v-copy svg{width:16px;height:16px}
+.v-wa{width:100%;margin-top:auto}
+@media (max-width:900px){.visit{grid-template-columns:1fr}.v-addr{padding:18px 18px 2px}.v-go{padding:16px 18px 20px}.v-info{padding:22px 18px}}
+@media (max-width:380px){.v-go{grid-template-columns:1fr}}
+
 /* ---------- footer ---------- */
 footer{padding:60px 0 120px;border-top:1px solid var(--line);margin-top:clamp(80px,10vw,130px)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:26px;align-items:center}
@@ -566,23 +600,31 @@ footer a{color:var(--silver)}
       <h2>Venha conhecer o studio.</h2>
       <p class="lead">Trabalhamos somente com agendamento. Chame no WhatsApp e o Mário combina com você o melhor horário.</p>
     </div>
-    <div class="book">
-      <div class="panel place rv">
-        <div class="status num" data-status style="margin:0"><span class="dot"></span><span data-status-text>…</span></div>
-        <div class="addr">R. Codajás, 97 · Vila Formosa<small>São Paulo, SP · CEP 03359-040</small></div>
-        <div class="go">
-          <a class="btn btn-red btn-sm" href="https://waze.com/ul?ll=-23.56874,-46.5480534&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 15.5C3.6 14.6 3 13 3 11a8 8 0 0 1 16 0c0 3.4-2.3 5.8-5.6 6.3l-3.8.1"/><circle cx="8" cy="18.5" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/><path d="M9.5 10h.01M14.5 10h.01M9.5 13.2c1.3 1 3.7 1 5 0"/></svg>Ir pelo Waze</a>
-          <a class="btn btn-ghost btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=-23.56874,-46.5480534" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Google Maps</a>
+    <div class="visit">
+      <article class="v-place rv">
+        <div class="v-photo"><img src="img/fachada.webp" width="1200" height="900" alt="Fachada do Studio Reverse na Rua Codajás, 97, com o portão e o banner da marca" loading="lazy" decoding="async" class="fade"></div>
+        <div class="v-addr">
+          <span class="v-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span>
+          <div><b>R. Codajás, 97 · Vila Formosa</b><small>São Paulo, SP · CEP 03359-040 · procure o banner no portão</small></div>
         </div>
-        <table class="hours num" id="hours"></table>
-        <div class="phone"><div><span id="ph">(11) 91268-3452</span><small>WhatsApp e ligação</small></div><button class="btn btn-ghost btn-sm" id="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Copiar</button></div>
-        <a class="btn btn-wa" style="margin-top:18px;width:100%" target="_blank" rel="noopener" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Agendar pelo WhatsApp</a>
-      </div>
-      <div class="panel place rv" style="padding:clamp(14px,2vw,20px)">
-        <div class="im" style="margin-top:0"><img src="img/fachada.webp" width="1200" height="900" alt="Fachada do Studio Reverse na Rua Codajás, 97, com o portão e o banner da marca" loading="lazy" decoding="async" class="fade"><span>Procure o banner da Reverse no portão</span></div>
-        <a class="map" href="https://www.google.com/maps/search/?api=1&query=STUDIO%20REVERSE%20Est%C3%A9tica%20Automotiva%20R.%20Codaj%C3%A1s%2097" target="_blank" rel="noopener" aria-label="Abrir localização no Google Maps"><canvas id="map"></canvas><b>Abrir no mapa</b></a>
-        
-      </div>
+        <div class="v-go">
+          <a class="btn btn-red" href="https://waze.com/ul?ll=-23.56874,-46.5480534&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 15.5C3.6 14.6 3 13 3 11a8 8 0 0 1 16 0c0 3.4-2.3 5.8-5.6 6.3l-3.8.1"/><circle cx="8" cy="18.5" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/><path d="M9.5 10h.01M14.5 10h.01M9.5 13.2c1.3 1 3.7 1 5 0"/></svg>Ir com Waze</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=-23.56874,-46.5480534" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Google Maps</a>
+        </div>
+      </article>
+      <article class="v-info rv">
+        <div class="status num" data-status style="margin:0"><span class="dot"></span><span data-status-text>…</span></div>
+        <div class="week num" id="week" aria-label="Dias de funcionamento"></div>
+        <div class="v-hours num">
+          <div><span>Segunda a sexta</span><b>08h30 às 18h</b></div>
+          <div><span>Sábado e domingo</span><b class="off">Fechado</b></div>
+        </div>
+        <div class="v-phone">
+          <div><span id="ph" class="num">(11) 91268-3452</span><small>WhatsApp e ligação</small></div>
+          <button class="v-copy" id="copy" aria-label="Copiar número"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>Copiar</span></button>
+        </div>
+        <a class="btn btn-wa v-wa" target="_blank" rel="noopener" href="https://wa.me/5511912683452?text=Ol%C3%A1%20M%C3%A1rio%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.9-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Agendar pelo WhatsApp</a>
+      </article>
     </div>
   </div>
 </section>
@@ -626,7 +668,7 @@ function status(){const {d,m}=spNow();const t=OPEN[d];
 }
 function paintStatus(){const s=status();document.querySelectorAll('[data-status]').forEach(el=>{el.classList.toggle('is-open',s.open);el.classList.toggle('is-closed',!s.open);el.querySelector('[data-status-text]').innerHTML=s.txt});
   const {d}=spNow();const order=[1,2,3,4,5,6,0];
-  $('#hours').innerHTML=order.map(i=>{const t=OPEN[i];return '<tr class="'+(i===d?'today':'')+'"><td>'+DN[i]+(i===d?'<span class="tag">HOJE</span>':'')+'</td><td class="'+(t?'':'closed')+'">'+(t?'08h30 às 18h':'Fechado')+'</td></tr>'}).join('')}
+  const wk=document.getElementById('week');if(wk)wk.innerHTML=order.map(i=>'<span class="'+(OPEN[i]?'':'off ')+(i===d?'today':'')+'"'+(i===d?' aria-current="date"':'')+'>'+DN[i].slice(0,3)+(i===d?'<i>HOJE</i>':'')+'</span>').join('')}
 paintStatus();setInterval(paintStatus,30000);
 
 /* ---------- hero: LED ceiling ---------- */
@@ -745,19 +787,6 @@ document.querySelectorAll('.ticker').forEach(tk=>{const row=tk.firstElementChild
 
 /* ---------- copy phone ---------- */
 const toast=$('#toast');$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText('11912683452')}catch(e){const r=document.createRange();r.selectNodeContents($('#ph'));getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy')}toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)};
-
-/* ---------- stylised map ---------- */
-const cv=$('#map'),cx=cv.getContext('2d');let mapVis=false,mapT=0;
-function drawMap(t){const r=cv.getBoundingClientRect();const dpr=Math.min(2,devicePixelRatio||1);if(cv.width!==Math.round(r.width*dpr)){cv.width=r.width*dpr;cv.height=r.height*dpr}
-  const W=cv.width,H=cv.height;cx.setTransform(1,0,0,1,0,0);cx.fillStyle='#0d0d10';cx.fillRect(0,0,W,H);cx.scale(dpr,dpr);const w=r.width,h=r.height;
-  cx.strokeStyle='rgba(255,255,255,.07)';cx.lineWidth=1;for(let i=-4;i<14;i++){cx.beginPath();cx.moveTo(i*46,0);cx.lineTo(i*46+70,h);cx.stroke()}for(let j=0;j<8;j++){cx.beginPath();cx.moveTo(0,j*30+8);cx.lineTo(w,j*30-16);cx.stroke()}
-  cx.strokeStyle='rgba(255,255,255,.18)';cx.lineWidth=7;cx.lineCap='round';cx.beginPath();cx.moveTo(-10,h*.62);cx.bezierCurveTo(w*.3,h*.55,w*.6,h*.68,w+10,h*.5);cx.stroke();
-  cx.lineWidth=4;cx.beginPath();cx.moveTo(w*.48,-10);cx.lineTo(w*.56,h+10);cx.stroke();
-  cx.fillStyle='rgba(255,255,255,.45)';cx.font='500 11px Jost, sans-serif';cx.fillText('R. CODAJÁS',w*.06,h*.56);
-  const px=w*.53,py=h*.6;const pulse=(t/1600)%1;cx.beginPath();cx.arc(px,py,8+pulse*26,0,7);cx.fillStyle='rgba(255,204,2,'+(0.35*(1-pulse))+')';cx.fill();
-  cx.beginPath();cx.arc(px,py,8,0,7);cx.fillStyle='#ffcc02';cx.fill();cx.lineWidth=3;cx.strokeStyle='#fff';cx.stroke()}
-new IntersectionObserver(es=>mapVis=es[0].isIntersecting).observe(cv);
-(function loop(t){if(mapVis||!mapT){drawMap(reduce?0:t);mapT=1}requestAnimationFrame(loop)})(0);
 
 /* ---------- leilão parallax ---------- */
 const lbg=document.querySelector('.lei-bg'),lsec=document.getElementById('leilao');
